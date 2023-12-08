@@ -9,7 +9,7 @@ $indexOptions = $themeSettings['INDEX']['OPTIONS']['SORT_ORDER'];
 $arOrder = explode(',', $indexOptions['VALUE']);
 
 ?>
-test deploy5
+test deploy6
 <div class="b-home-content">
 <?php //home slider?>
     <div class="b-home-block" data-order="-1">
