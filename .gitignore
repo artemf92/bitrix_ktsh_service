@@ -18,6 +18,7 @@
 /phpMyAdmin-*
 /timthumb_cache
 /webstat
+/images
 /.idea
 /.csscomb.json
 /.htaccess
