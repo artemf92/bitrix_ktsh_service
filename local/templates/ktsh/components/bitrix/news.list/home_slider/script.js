@@ -6,7 +6,7 @@ $(document).ready(function(){
     let MainSlider = new Swiper ('.home-slider', {
         // Optional parameters
         loop: true,
-        autoHeight: true,
+        // autoHeight: true,
         autoplay: autoplay,
         navigation: {
             nextEl: '.home-slider .b-button-next',
