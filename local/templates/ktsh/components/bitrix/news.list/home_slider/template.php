@@ -81,9 +81,9 @@ $sliderMobileHeight = $themeSettings['INDEX']['OPTIONS']['BLOCK_SLIDER_MOBILE_HE
                                 <?php if($arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT'] != ''){ ?>
                                     <div class="b-slider-title"><?=$arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT']?></div>
                                 <?php } ?>
-                                <?php if($arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] != ''){ ?>
+                                <?/*php if($arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] != ''){ ?>
                                     <div class="b-slider-text"><?=$arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT']?></div>
-                                <?php } ?>
+                                <?php } */?>
                             </div>
 
                             <?php if($show_button_one || $show_button_two){ ?>
@@ -116,9 +116,9 @@ $sliderMobileHeight = $themeSettings['INDEX']['OPTIONS']['BLOCK_SLIDER_MOBILE_HE
                             <?php if($arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT'] != ''){ ?>
                                 <div class="b-slider-title"><?=$arItem['PROPERTIES']['TITLE']['~VALUE']['TEXT']?></div>
                             <?php } ?>
-                            <?php if($arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] != ''){ ?>
+                            <?/*php if($arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] && $arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT'] != ''){ ?>
                                 <div class="b-slider-text"><?=$arItem['PROPERTIES']['TEXT']['~VALUE']['TEXT']?></div>
-                            <?php } ?>
+                            <?php } */?>
                         </div>
 
                         <?php if($show_button_one || $show_button_two){ ?>

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     const site_dir = $('body').attr('data-site-dir');
-    $('.phone-input').mask('9 (999) 999-9999');
+    $('.phone-input').mask('+7 (999) 999-99-99');
     ttlazy('data-src');
 
     setTimeout( () => {
@@ -231,7 +231,7 @@ $(document).ready(function(){
 
 });
 BX.addCustomEvent('onAjaxSuccess', function(){
-    $('.phone-input').mask('9 (999) 999-9999');
+    $('.phone-input').mask('+7 (999) 999-99-99');
 });
 $(window).scroll(function() {
 

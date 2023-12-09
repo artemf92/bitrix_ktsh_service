@@ -151,7 +151,7 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
         $bgImage = false;
     }
     ?>
-    <div id="block-catalog" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_CATALOG")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_CATALOG_BACKGROUND_COLOR']['VALUE']?>">
+    <div id="block-services" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_CATALOG")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_CATALOG_BACKGROUND_COLOR']['VALUE']?>">
 
         <div class="b-catalog-list-block b-block">
             <div class="container">
@@ -205,7 +205,7 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
         $bgImage = false;
     }
     ?>
-    <div id="block-services" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_SERVICES")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_SERVICES_BACKGROUND_COLOR']['VALUE']?>">
+    <div id="block-objects" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_SERVICES")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_SERVICES_BACKGROUND_COLOR']['VALUE']?>">
 
         <div class="b-services-list-block b-block">
             <div class="container">
@@ -295,7 +295,7 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
         $bgImage = false;
     }
     ?>
-    <div id="block-akcii" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_AKCII")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_AKCII_BACKGROUND_COLOR']['VALUE']?>">
+    <div id="block-news" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_AKCII")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_AKCII_BACKGROUND_COLOR']['VALUE']?>">
 
         <div class="b-services-list-block b-block">
             <div class="container">
@@ -572,7 +572,7 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
         $bgImage = false;
     }
     ?>
-    <div id="block-projects" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_PROJECTS")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_PROJECTS_BACKGROUND_COLOR']['VALUE']?>">
+    <div id="block-reports" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_PROJECTS")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_PROJECTS_BACKGROUND_COLOR']['VALUE']?>">
         <div class="b-polezno-block b-block">
             <div class="container">
                 <div class="b-block-title-wrap">
@@ -591,61 +591,74 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
                         ); ?>
                     </div>
                 </div>
-                <?$APPLICATION->IncludeComponent("bitrix:news.list","projects-list-no-detail",Array(
-                        "DISPLAY_DATE" => "Y",
-                        "DISPLAY_NAME" => "Y",
-                        "DISPLAY_PICTURE" => "Y",
-                        "DISPLAY_PREVIEW_TEXT" => "Y",
-                        "AJAX_MODE" => "N",
-                        "IBLOCK_TYPE" => "content",
-                        "IBLOCK_ID" => "12",
-                        "NEWS_COUNT" => "8",
-                        "SORT_BY1" => "ACTIVE_FROM",
-                        "SORT_ORDER1" => "DESC",
-                        "SORT_BY2" => "SORT",
-                        "SORT_ORDER2" => "ASC",
-                        "FILTER_NAME" => "arrFilter",
-                        "FIELD_CODE" => Array("ID"),
-                        "PROPERTY_CODE" => Array("IMAGE"),
-                        "CHECK_DATES" => "Y",
-                        "DETAIL_URL" => "",
-                        "PREVIEW_TRUNCATE_LEN" => "",
-                        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                        "SET_TITLE" => "N",
-                        "SET_BROWSER_TITLE" => "N",
-                        "SET_META_KEYWORDS" => "N",
-                        "SET_META_DESCRIPTION" => "N",
-                        "SET_LAST_MODIFIED" => "N",
-                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                        "ADD_SECTIONS_CHAIN" => "N",
-                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                        "PARENT_SECTION" => "",
-                        "PARENT_SECTION_CODE" => "",
-                        "INCLUDE_SUBSECTIONS" => "Y",
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => "3600",
-                        "CACHE_FILTER" => "Y",
-                        "CACHE_GROUPS" => "Y",
-                        "DISPLAY_TOP_PAGER" => "N",
-                        "DISPLAY_BOTTOM_PAGER" => "N",
-                        "PAGER_TITLE" => "Новости",
-                        "PAGER_SHOW_ALWAYS" => "N",
-                        "PAGER_TEMPLATE" => "",
-                        "PAGER_DESC_NUMBERING" => "N",
-                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                        "PAGER_SHOW_ALL" => "N",
-                        "PAGER_BASE_LINK_ENABLE" => "N",
-                        "SET_STATUS_404" => "N",
-                        "SHOW_404" => "N",
-                        "MESSAGE_404" => "",
-                        "PAGER_BASE_LINK" => "",
-                        "PAGER_PARAMS_NAME" => "arrPager",
-                        "AJAX_OPTION_JUMP" => "N",
-                        "AJAX_OPTION_STYLE" => "Y",
-                        "AJAX_OPTION_HISTORY" => "N",
-                        "AJAX_OPTION_ADDITIONAL" => ""
-                    )
-                );?>
+                <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"projects-list-no-detail", 
+	array(
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"AJAX_MODE" => "N",
+		"IBLOCK_TYPE" => "content",
+		"IBLOCK_ID" => "12",
+		"NEWS_COUNT" => "8",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"FILTER_NAME" => "arrFilter",
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "IMAGE",
+			2 => "",
+		),
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"SET_TITLE" => "N",
+		"SET_BROWSER_TITLE" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"CACHE_FILTER" => "Y",
+		"CACHE_GROUPS" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => "",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SET_STATUS_404" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => "",
+		"PAGER_BASE_LINK" => "",
+		"PAGER_PARAMS_NAME" => "arrPager",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"COMPONENT_TEMPLATE" => "projects-list-no-detail",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+);?>
             </div>
         </div>
     </div>
@@ -750,7 +763,7 @@ if($imageFromSettings && strlen($imageFromSettings)> 0){
         $bgImage = false;
     }
     ?>
-    <div id="block-polezno" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_POLEZNO")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_POLEZNO_BACKGROUND_COLOR']['VALUE']?>">
+    <div id="block-job" class="b-home-block" data-order="<?=array_keys($arOrder, "BLOCK_POLEZNO")[0];?>" style="background-image: url(<?=$bgImage?>); background-position: 50% 50%; background-size: cover; background-color: <?=$themeSettings['INDEX']['OPTIONS']['BLOCK_POLEZNO_BACKGROUND_COLOR']['VALUE']?>">
         <div class="b-polezno-block b-block">
             <div class="container">
                 <div class="b-block-title-wrap">

@@ -2022,8 +2022,9 @@ img{
         height: 180px;
     }
     .site-slider .b-slide-content{
-        padding-top: 200px;
-        padding-bottom: 60px;
+        padding-top: 105px;
+        /* padding-top: 200px; */
+        /* padding-bottom: 60px; */
     }
     .site-slider .b-button-next{
         display: none;
