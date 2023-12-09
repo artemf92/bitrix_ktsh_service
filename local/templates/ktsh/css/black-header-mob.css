@@ -1,0 +1,21 @@
+@media(max-width: 991px){
+    .header .b-up .b-slogan,
+    .b-header-address, .b-header-phone a,
+    .b-header-socials ul li a,
+    .b-slider-title,
+    .b-slider-title span,
+    .b-slider-text{
+        color: #fff !important;
+    }
+    .header .b-up .b-slogan:before,
+    .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before, .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before{
+        background-color: #fff !important;
+    }
+    .header .b-mobile-burger{
+        background: none !important;
+    }
+    .b-main-menu li a{
+        color: #000;
+    }
+}
