@@ -1,9 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Корпоративный сайт для услуг любой сферы бизнеса - AXI.CORP");
-$APPLICATION->SetPageProperty("keywords", "Корпоративный сайт услуг");
-$APPLICATION->SetPageProperty("title", "Корпоративный сайт услуг - AXI.CORP");
-$APPLICATION->SetTitle("Корпоративный сайт услуг - AXI.CORP");
+$APPLICATION->SetPageProperty("description", "Сайт управляющей компании КТСХ Сервис");
+$APPLICATION->SetPageProperty("keywords", "КТСХ-Сервис");
+$APPLICATION->SetPageProperty("title", "КТСХ-Сервис");
+$APPLICATION->SetTitle("КТСХ-Сервис");
 
 $indexOptions = $themeSettings['INDEX']['OPTIONS']['SORT_ORDER'];
 $arOrder = explode(',', $indexOptions['VALUE']);
