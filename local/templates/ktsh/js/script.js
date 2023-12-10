@@ -33,6 +33,8 @@ $(document).ready(function(){
 
     for (let item of anchorlinks) {
         item.addEventListener('click', (e)=> {
+            if (e.target.nextElementSibling.className == 'submenu'/* && window.innerWidth <= 768*/) return;
+
             let hashval = item.getAttribute('href')
             let target = document.querySelector(hashval)
             target.scrollIntoView({

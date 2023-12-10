@@ -2,3 +2,42 @@
   display: flex;
   align-items: center;
 }
+.b-main-menu ul:not(.b-nav-dropdown) ul.submenu {
+  position: absolute;
+  background-color: #eee;
+  padding: 5px 0;
+  left: 0;
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.b-main-menu ul:not(.b-nav-dropdown) ul.submenu li {
+  width: 100%;
+  padding: 5px 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.b-main-menu ul:not(.b-nav-dropdown) > li:hover ul.submenu {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.b-main-menu ul:not(.b-nav-dropdown) .submenu .link:hover {
+  color: #007bff;
+  background-color: inherit;
+}
+.b-main-menu ul:not(.b-nav-dropdown) .submenu .link {
+  color: #151515;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .b-main-menu ul.submenu {
+    display: none;
+    position: static;
+    background-color: inherit;
+  }
+  .b-main-menu li a:hover, .b-main-menu li a:focus {
+    background-color: inherit !important;
+  }
+}
