@@ -18,4 +18,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /home/a/artemf92/ktsh/
+          server-dir: /var/www/p524865/data/www/new.ktsh39.ru/
