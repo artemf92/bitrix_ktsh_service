@@ -1,3 +1,6 @@
+<? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDTH") != "Y") : ?>
+    </div> <? //container ?>
+<? endif; ?>
 <? if ($curPage != SITE_DIR . "index.php"): ?>
 </div> <? //b-site-inner ?>
 <? endif; ?>

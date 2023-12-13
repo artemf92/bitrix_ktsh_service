@@ -197,4 +197,7 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                             </div>
                         </div>
                     <? endif; ?>
+                    <? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDTH") != "Y") : ?>
+                        <div class="container">
+                    <? endif; ?>
                 <? endif ?>
