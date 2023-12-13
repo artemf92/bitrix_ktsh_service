@@ -31,13 +31,37 @@
   color: #151515;
   padding: 0;
 }
+.b-other-page .header .b-up .b-slogan,
+.b-other-page .b-header-address,
+.b-other-page .b-header-phone a,
+.b-other-page .b-header-socials ul li a,
+.b-other-page .b-slider-title,
+.b-other-page .b-slider-title span,
+.b-other-page .b-slider-text {
+  color: #151515;
+}
+.b-other-page .b-site-inner {
+    padding-bottom: 2rem;
+}
 @media (max-width: 768px) {
   .b-main-menu ul.submenu {
     display: none;
     position: static;
     background-color: inherit;
   }
-  .b-main-menu li a:hover, .b-main-menu li a:focus {
+  .b-main-menu li a:hover,
+  .b-main-menu li a:focus {
     background-color: inherit !important;
+  }
+}
+@media (min-width: 992px) {
+  .b-other-page .header .b-up .b-slogan,
+  .b-other-page .b-header-address,
+  .b-other-page .b-header-phone a,
+  .b-other-page .b-header-socials ul li a,
+  .b-other-page .b-slider-title,
+  .b-other-page .b-slider-title span,
+  .b-other-page .b-slider-text {
+    color: #151515 !important;
   }
 }
