@@ -41,7 +41,102 @@
   color: #151515;
 }
 .b-other-page .b-site-inner {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+#block-text2 td {
+  padding: 2px 5px;
+}
+#block-text2 a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#block-text2 a:hover {
+  text-decoration-color: transparent;
+}
+.b-documents-list .b-title {
+  font-size: 18px;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.b-documents-list .b-documents-elements {
+  margin-bottom: 60px;
+}
+
+.b-documents-list .b-documents-elements .b-documents-element:nth-child(odd) {
+  background-color: #eff2f7;
+}
+
+.b-documents-list .b-documents-elements .b-documents-element .b-doctitle {
+  position: relative;
+  padding: 30px 60px 30px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.b-documents-list .b-documents-elements .b-documents-element .docfile {
+  padding: 0 60px 30px 60px;
+  color: #333;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.b-documents-list .b-documents-elements .b-documents-element .docfile.b-none {
+  display: none;
+}
+.b-service-detail .b-documents-list .b-documents-elements,
+.b-service-section .b-documents-list .b-documents-elements {
+  margin-bottom: 15px;
+}
+
+.b-documents-list {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.b-documents-list .b-documents-elements .b-documents-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.b-docfile {
+  position: relative;
+  padding: 30px 60px 30px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.b-docfile a {
+    color: var(--gray-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-decoration-color: transparent;
+}
+.b-docfile a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.b-docfile .icon {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* https://www.svgrepo.com/svg/424860/pdf-file-type */
+.icon.b-pdf {
+  background-image: url(/local/templates/ktsh/images/pdf-file.svg);
+}
+.icon.b-doc {
+  background-image: url(/local/templates/ktsh/images/word-file.svg);
 }
 @media (max-width: 768px) {
   .b-main-menu ul.submenu {
@@ -52,6 +147,29 @@
   .b-main-menu li a:hover,
   .b-main-menu li a:focus {
     background-color: inherit !important;
+  }
+  .b-documents-list .b-title {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .b-documents-list .b-documents-elements {
+    margin-bottom: 30px;
+  }
+
+  .b-documents-list .b-documents-elements .b-documents-element .b-doctitle {
+    padding: 30px;
+  }
+
+  .b-documents-list
+    .b-documents-elements
+    .b-documents-element
+    .b-doctitle:after {
+    right: 15px;
+  }
+
+  .b-documents-list .b-documents-elements .b-documents-element .docfile {
+    padding: 0 30px 30px 30px;
   }
 }
 @media (min-width: 992px) {
