@@ -32,6 +32,14 @@ $arUrlRewrite=array (
     'PATH' => '/polezno/index.php',
     'SORT' => 100,
   ),
+  6 => 
+  array (
+    'CONDITION' => '#^/objects/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/objects/index.php',
+    'SORT' => 100,
+  ),
   0 => 
   array (
     'CONDITION' => '#^/rest/#',

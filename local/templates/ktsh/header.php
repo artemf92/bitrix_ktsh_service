@@ -151,6 +151,10 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 ); ?>
                             </span>
                         </div>
+                        <div class="b-header-order">
+                            <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="btn b-btn b-btn-primary">Оставить заявку</button>
+                        </div>
+                        <? /* ?>
                         <div class="b-header-socials <?= $mobileSocialsClass ?>">
                             <? $APPLICATION->IncludeFile(
                                 SITE_DIR . "include/header/socials.php",
@@ -158,7 +162,7 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 array("MODE" => "php")
                             ); ?>
                         </div>
-
+                        <? */ ?>
                     </div>
                 </div>
                 <div class="b-down">
@@ -193,11 +197,11 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                     <? if ($APPLICATION->GetProperty("hide_h1") != "Y") : ?>
                         <div class="container">
                             <div class="b-page-title">
-                                <h1><? $APPLICATION->ShowTitle() ?></h1>
+                                <h1><? $APPLICATION->ShowTitle(false) ?></h1>
                             </div>
                         </div>
                     <? endif; ?>
-                    <? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDTH") != "Y") : ?>
+                    <? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDE") != "Y") : ?>
                         <div class="container">
-                    <? endif; ?>
-                <? endif ?>
+                        <? endif; ?>
+                    <? endif ?>

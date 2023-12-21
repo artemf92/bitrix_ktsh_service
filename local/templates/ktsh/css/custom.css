@@ -111,17 +111,17 @@
   font-size: 16px;
 }
 .b-docfile a {
-    color: var(--gray-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    text-decoration-color: transparent;
+  color: var(--gray-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-decoration-color: transparent;
 }
 .b-docfile a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: text-decoration-color .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: text-decoration-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .b-docfile .icon {
   content: '';
@@ -137,6 +137,73 @@
 }
 .icon.b-doc {
   background-image: url(/local/templates/ktsh/images/word-file.svg);
+}
+.footer-contacts {
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+.footer-contacts__wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.footer-contacts__phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__bottom {
+  position: relative;
+  padding: 20px 0 0;
+  background: #f3f3f3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.footer__bottom-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copyright,
+.footer__links {
+  vertical-align: middle;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.footer__copyright {
+  max-width: 260px;
+  line-height: 1.55;
+}
+.footer__links {
+  text-align: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer__link {
+  margin: 0 0 10px;
+}
+.b-header-phone--footer {
+  font-weight: 400 !important;
+}
+.b-header-order .btn {
+  padding: 10px 15px;
+  font-size: 12px;
 }
 @media (max-width: 768px) {
   .b-main-menu ul.submenu {
