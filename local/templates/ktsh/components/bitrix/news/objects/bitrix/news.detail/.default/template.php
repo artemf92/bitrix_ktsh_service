@@ -19,24 +19,24 @@ $this->setFrameMode(true);
 				<div class="contact-holder">
 					<h2>Генеральный директор</h2>
 
-					<h3>Маркин Алексей Викторович*</h3>
-					<div class="mail">markin_av@dsinv.ru</div>
+					<h3>Lorem, ipsum dolor.</h3>
+					<div class="mail">asdsd_asdq@email.com</div>
 
 				</div>
 				<div class="contact-holder">
 					<h2>Комендант</h2>
 
-					<h3>Бойченко Алексей Сергеевич</h3>
-					<div class="phone">+7 (905) 559-22-74</div>
-					<div class="mail">Boichenko_AS@dsinv.ru</div>
+					<h3>Lorem, ipsum dolor.</h3>
+					<a href="tel:79000000000" class="phone">+7 (900) 000-00-00</a>
+					<div class="mail">asdsd_asdq@email.com</div>
 
 				</div>
 				<div class="contact-holder">
 					<h2>Персональный клиентский менеджер</h2>
 
-					<h3>Шахова Дарья Сергеевна</h3>
-					<div class="phone">+7 (916) 050 08 51</div>
-					<div class="mail">Azarova_DS@dsinv.ru</div>
+					<h3>Lorem, ipsum dolor.</h3>
+					<a href="tel:79000000000" class="phone">+7 (900) 000-00-00</a>
+					<div class="mail">asdsd_asdq@email.com</div>
 
 				</div>
 
@@ -73,7 +73,8 @@ $this->setFrameMode(true);
 	<? echo $arResult["NAV_TEXT"]; ?>
 	<? if ($arParams["DISPLAY_BOTTOM_PAGER"]) : ?><br /><?= $arResult["NAV_STRING"] ?><? endif; ?>
 	<? elseif ($arResult["DETAIL_TEXT"] <> '') : ?>
-		<? //echo $arResult["DETAIL_TEXT"]; ?>
+		<? //echo $arResult["DETAIL_TEXT"]; 
+		?>
 	<? else : ?>
 		<? echo $arResult["PREVIEW_TEXT"]; ?>
 	<? endif ?>
