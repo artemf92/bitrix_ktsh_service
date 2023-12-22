@@ -1,23 +1,29 @@
-<? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDTH") != "Y") : ?>
-    </div> <? //container ?>
+<? if ($curPage != SITE_DIR . "index.php" && $APPLICATION->GetProperty("FULL_WIDE") != "Y") : ?>
+    </div> <? //container 
+            ?>
 <? endif; ?>
-<? if ($curPage != SITE_DIR . "index.php"): ?>
-</div> <? //b-site-inner ?>
+<? if ($curPage != SITE_DIR . "index.php") : ?>
+    </div> <? //b-site-inner 
+            ?>
 <? endif; ?>
-</div> <? //b-content ?>
+</div> <? //b-content 
+        ?>
 <footer id="site-footer" class="b-site-footer">
     <?php
     CModule::IncludeModule('iblock');
     $mapElementActive = false;
     $mapElement = CIBlockElement::GetByID("67");
-    if($mapElementRes = $mapElement->GetNext()){
-        if($mapElementRes['ACTIVE'] == 'Y'){
+    if ($mapElementRes = $mapElement->GetNext()) {
+        if ($mapElementRes['ACTIVE'] == 'Y') {
             $mapElementActive = true;
         }
     }
     ?>
-    <?php if($mapElementActive): ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.detail","footer-map",Array(
+    <?php if ($mapElementActive && $APPLICATION->GetCurDir() != '/objects/') : ?>
+        <? $APPLICATION->IncludeComponent(
+            "bitrix:news.detail",
+            "footer-map",
+            array(
                 "DISPLAY_DATE" => "Y",
                 "DISPLAY_NAME" => "Y",
                 "DISPLAY_PICTURE" => "Y",
@@ -34,8 +40,8 @@
                 "ELEMENT_ID" => "67",
                 "ELEMENT_CODE" => "",
                 "CHECK_DATES" => "N",
-                "FIELD_CODE" => Array("ID"),
-                "PROPERTY_CODE" => Array("COORDS"),
+                "FIELD_CODE" => array("ID"),
+                "PROPERTY_CODE" => array("COORDS"),
                 "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
                 "DETAIL_URL" => "",
                 "SET_TITLE" => "N",
@@ -71,14 +77,50 @@
                 "AJAX_OPTION_STYLE" => "Y",
                 "AJAX_OPTION_HISTORY" => "N"
             )
-        );?>
+        ); ?>
+    <? else : ?>
+        <section class="footer-contacts">
+            <div class="container">
+                <div class="footer-contacts__wrap">
+                    <div class="footer-contacts__phone">
+                        <div class="b-header-phone b-header-phone--footer">
+                            <span>
+                                <? $APPLICATION->IncludeFile(
+                                    SITE_DIR . "include/header/phone.php",
+                                    array(),
+                                    array("MODE" => "php")
+                                ); ?>
+                            </span>
+                        </div>
+                        <? //<div class="footer-contacts__phone-text">Круглосуточный клиентский центр<br>Звонок бесплатный</div> 
+                        ?>
+                    </div>
+                    <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="###" class="btn b-btn b-btn-primary">Оставить заявку</button>
+                </div>
+            </div>
+        </section>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-wrap">
+                    <div class="footer__copyright">
+                        © <?= date('Y') ?>
+                    </div>
+                    <div class="footer__menu">
+                        <ul class="footer__links">
+                            <li class="footer__link"><a href="/politics/">Политика обработки персональных данных</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 </footer>
 <?php
 $themeSettings = gedeGetAdminParams();
 
 ?>
-</div> <? //site-wrap ?>
+</div> <? //site-wrap 
+        ?>
 <div class="modal b-modal fade" id="b-zapis-form" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -113,33 +155,33 @@ $themeSettings = gedeGetAdminParams();
                         "DUPLICATE_MESSAGES" => "N",
                     ),
                     false
-                );?>
+                ); ?>
             </div>
         </div>
     </div>
 </div>
 
 <?php
-    $fixedButtonText = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_NAME']['VALUE'] ?? false;
-    $fixedButtonShowPc = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_SHOW_PC']['VALUE'] ?? false;
-    $fixedButtonShowMobile = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_SHOW_MOBILE']['VALUE'] ?? false;
-    $fixedButtonShowPosition = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_POSITION']['VALUE'] ?? false;
+$fixedButtonText = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_NAME']['VALUE'] ?? false;
+$fixedButtonShowPc = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_SHOW_PC']['VALUE'] ?? false;
+$fixedButtonShowMobile = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_SHOW_MOBILE']['VALUE'] ?? false;
+$fixedButtonShowPosition = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_POSITION']['VALUE'] ?? false;
 
-    $showPCClass= '';
-    $showMobileClass= '';
-    $positionClass = $fixedButtonShowPosition == 1 ? 'position-left' : 'position-right';
+$showPCClass = '';
+$showMobileClass = '';
+$positionClass = $fixedButtonShowPosition == 1 ? 'position-left' : 'position-right';
 
-    if($fixedButtonShowPc == 'Y'){
-        $showPCClass = 'b-show-pc';
-    }
-    if($fixedButtonShowMobile == 'Y'){
-        $showMobileClass = 'b-show-mobile';
-    }
+if ($fixedButtonShowPc == 'Y') {
+    $showPCClass = 'b-show-pc';
+}
+if ($fixedButtonShowMobile == 'Y') {
+    $showMobileClass = 'b-show-mobile';
+}
 ?>
-<?php if($fixedButtonText): ?>
-<div class="b-fixed-button <?=$showPCClass?> <?=$showMobileClass?> <?=$positionClass?>">
-    <button data-form-title="<?=$fixedButtonText?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?=$fixedButtonText?></button>
-</div>
+<?php if ($fixedButtonText) : ?>
+    <div class="b-fixed-button <?= $showPCClass ?> <?= $showMobileClass ?> <?= $positionClass ?>">
+        <button data-form-title="<?= $fixedButtonText ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?= $fixedButtonText ?></button>
+    </div>
 <?php endif; ?>
 
 <div class="modal b-modal fade" id="success-modal" tabindex="-1">
@@ -170,15 +212,16 @@ $themeSettings = gedeGetAdminParams();
 
 <? $APPLICATION->IncludeFile(
     SITE_DIR . "include/whatsap.php",
-    Array(),
-    Array("MODE" => "php")
+    array(),
+    array("MODE" => "php")
 ); ?>
 <? $APPLICATION->IncludeFile(
     SITE_DIR . "include/codes/footer.php",
-    Array(),
-    Array("MODE" => "php")
+    array(),
+    array("MODE" => "php")
 ); ?>
 
 
 </body>
+
 </html>
