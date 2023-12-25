@@ -101,7 +101,7 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
     ?>
     <? CJSCore::Init(); ?>
     <div class="site-wrap">
-        <header class="header">
+        <header class="header header--lk">
             <div class="container">
                 <div class="b-up b-flex">
                     <div class="d-lg-none b-mobile-burger">
@@ -122,25 +122,25 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 ); ?>
                             </a>
                         </div>
-                        <div class="b-slogan <?= $mobileSloganClass ?>">
+                        <div class="d-lg-none b-slogan <?= $mobileSloganClass ?>">
                             <? $APPLICATION->IncludeFile(
                                 SITE_DIR . "include/header/slogan.php",
                                 array(),
                                 array("MODE" => "php")
                             ); ?>
                         </div>
+                        <div class="b-header-address <?= $mobileAddressClass ?>">
+                            <i class="icon-placeholder-filled-point"></i>
+                            <span>
+                                <? $APPLICATION->IncludeFile(
+                                    SITE_DIR . "include/header/address.php",
+                                    array(),
+                                    array("MODE" => "php")
+                                ); ?>
+                            </span>
+                        </div>
                     </div>
-                    <div class="b-center b-header-address <?= $mobileAddressClass ?>">
-                        <i class="icon-placeholder-filled-point"></i>
-                        <span>
-                            <? $APPLICATION->IncludeFile(
-                                SITE_DIR . "include/header/address.php",
-                                array(),
-                                array("MODE" => "php")
-                            ); ?>
-                        </span>
-                    </div>
-                    <div class="b-right b-flex">
+                    <div class="b-center">
                         <div class="b-header-phone <?= $mobilePhoneClass ?>">
                             <i class="icon-phone-call"></i>
                             <span>
@@ -151,8 +151,30 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 ); ?>
                             </span>
                         </div>
+                    </div>
+                    <div class="b-flex b-hide-mobile b-right">
+                        <div class="b-header-search">
+                            <form class="search">
+                                <label for="search">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#0898d4" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" name="search" class="b-search" />
+                                </label>
+                            </form>
+                        </div>
                         <div class="b-header-order">
                             <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="btn b-btn b-btn-primary">Оставить заявку</button>
+                        </div>
+                        <div class="b-header-cabinet">
+                            <a href="#" class="link-cabinet">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#0898d4" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                </svg>
+                            </a>
                         </div>
                         <? /* ?>
                         <div class="b-header-socials <?= $mobileSocialsClass ?>">
@@ -172,6 +194,18 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                         array("MODE" => "php")
                     ); ?>
                 </div>
+            </div>
+            <div class="b-mobile-search">
+                <form class="search">
+                    <label for="search">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#0898d4" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </div>
+                        <input type="text" name="search" class="b-search" />
+                    </label>
+                </form>
             </div>
         </header>
 

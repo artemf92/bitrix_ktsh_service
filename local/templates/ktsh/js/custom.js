@@ -31,3 +31,27 @@ $(document).ready(function() {
     return false
   })
 })
+$(document).on('click', function (e) {
+  if (
+    $('.b-mobile-search').hasClass('active') &&
+    !$(e.target).closest('.b-mobile-search').length &&
+    !$(e.target).closest('.mobile-search').length
+  )
+    $('.b-mobile-search').removeClass('active')
+})
+$(document).on('click', '.b-header-search', function() {
+  if (!$(this).hasClass('active')) {
+    $(this).find('input').focus()
+    $(this).toggleClass('active')
+  }
+})
+$(document).on('blur', '.b-header-search input', function () {
+  $(this).find('input').blur()
+  $(this).closest('.b-header-search').toggleClass('active')
+})
+$(document).on('click', '.mobile-search', function () {
+  if (!$('.b-mobile-search').hasClass('active')) {
+    $('.b-mobile-search input').focus()
+  }
+  $('.b-mobile-search').toggleClass('active')
+})
