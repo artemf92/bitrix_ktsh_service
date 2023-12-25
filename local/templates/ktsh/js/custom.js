@@ -47,6 +47,7 @@ $(document).on('click', '.b-header-search', function() {
 })
 $(document).on('blur', '.b-header-search input', function () {
   $(this).find('input').blur()
+  $(this).val('')
   $(this).closest('.b-header-search').toggleClass('active')
 })
 $(document).on('click', '.mobile-search', function () {
