@@ -13,7 +13,7 @@ $(document).ready(function() {
     })
   }
   // SCROLL ANCHOR
-  $("a[href^='#']").on('click', function (e) {
+  $("a[href^='#']:not(.show-more)").on('click', function (e) {
     var fixed_offset = 35
 
     if ($(window).width() <= 1199) {

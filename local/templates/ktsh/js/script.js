@@ -29,7 +29,7 @@ $(document).ready(function(){
         $('.b-main-menu').slideToggle();
     });
 
-    let anchorlinks = document.querySelectorAll('a[href^="#"]')
+    let anchorlinks = document.querySelectorAll('a[href^="#"]:not(.show-more)')
 
     for (let item of anchorlinks) {
         item.addEventListener('click', (e)=> {
