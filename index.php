@@ -333,7 +333,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
                     </div>
                     <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"akcii-list", 
+	"akcii-list-ajax", 
 	array(
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",

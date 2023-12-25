@@ -1,0 +1,21 @@
+.b-services-list-block > .container {
+  position: relative;
+}
+.link_all {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  left: auto;
+  color: #888;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .link_all {
+    top: 4px;
+  }
+  .b-services-list-block .b-block-title {
+    text-align: left;
+  }
+}
