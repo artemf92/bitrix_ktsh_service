@@ -1,10 +1,11 @@
 
 <ul>
     <li>
-        <a href="https://instagram.com" target="_blank" rel="nofollow">
-            <i class="fab fa-instagram"></i>
+        <a href="#" target="_blank" rel="nofollow">
+            <i class="fab fa-telegram"></i>
         </a>
     </li>
+    <? /* ?>
     <li>
         <a href="https://www.facebook.com" target="_blank" rel="nofollow">
             <i class="fab fa-facebook-f"></i>
@@ -20,4 +21,5 @@
             <i class="fab fa-youtube"></i>
         </a>
     </li>
+    <? */ ?>
 </ul>
