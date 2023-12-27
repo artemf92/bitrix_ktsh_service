@@ -50,7 +50,10 @@ $APPLICATION->SetTitle("Новости");
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "BUTTON_TEXT",
+			2 => "BUTTON_LINK",
+			3 => "BUTTON_DETAIL_TEXT",
+			4 => "",
 		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
