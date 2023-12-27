@@ -393,7 +393,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"COMPONENT_TEMPLATE" => "akcii-list",
+		"COMPONENT_TEMPLATE" => "akcii-list-ajax",
 		"STRICT_SECTION_CHECK" => "N"
 	),
 	false
@@ -830,7 +830,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
                     </div>
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:news.list",
-                        "polezno-list-no-detail",
+                        "vacancy-list-no-detail",
                         array(
                             "DISPLAY_DATE" => "Y",
                             "DISPLAY_NAME" => "Y",
