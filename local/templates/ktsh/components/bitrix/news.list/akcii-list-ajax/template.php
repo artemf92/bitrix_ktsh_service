@@ -11,7 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-$this->addExternalJs("/bitrix/js/fgsoft.autoloader/autoloader.plugin.js");
 $themeSettings = gedeGetAdminParams();
 $imageType = $themeSettings['INDEX']['OPTIONS']['BLOCK_AKCII_IMAGE_TYPE']['VALUE'] ?? 1;
 switch ($imageType) {
@@ -55,10 +54,7 @@ switch ($countMOB) {
 ?>
 <div class="b-services-list" id="b-news-list">
     <? if ($arParams["DISPLAY_TOP_PAGER"]) : ?>
-        <?= $arResult["NAV_STRING"] ?><br />    
-    <? endif; ?>
-    <? if ($arParams["PAGER_SHOW_ALL"]) : ?>
-        <a href="<?=$arParams["PAGER_BASE_LINK"]?>" class="link_all">Все новости</a>
+        <?= $arResult["NAV_STRING"] ?><br />
     <? endif; ?>
     <div class="row ajax-items">
         <?php $i = 1; ?>
@@ -85,21 +81,24 @@ switch ($countMOB) {
             ?>
             <div class="<?= $classMob ?> <?= $classPC ?> col-md-4 b-item <?= $itemClass ?>">
                 <div class="b-item-inner" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-
                     <div class="b-img">
-                        <span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>">
-                            <img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $arItem['NAME'] ?>" />
-                        </span>
+                        <? if ($image) { ?>
+                            <span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>">
+                                <img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $arItem['NAME'] ?>" />
+                            </span>
+                        <? } ?>
                     </div>
                     <div class="b-item-content-wrap">
                         <div class="b-item-content">
-                            <div class="b-title">
+                            <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="b-title d-block mb-2">
                                 <span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>">
                                     <?= $arItem['NAME'] ?>
                                 </span>
-                            </div>
+                            </a>
                             <?php if ($arItem['PREVIEW_TEXT']) : ?>
                                 <div class="b-text"><?= $arItem['PREVIEW_TEXT'] ?></div>
+                            <?php elseif ($arItem['DETAIL_TEXT']) : ?>
+                                <div class="b-text"><?= mb_substr(strip_tags($arItem['DETAIL_TEXT']), 0, 200, 'UTF-8') ?>...</div>
                             <?php endif; ?>
                             <?php if ($arItem['PROPERTIES']['PRICE']['~VALUE']) : ?>
                                 <div class="b-price"><?= $arItem['PROPERTIES']['PRICE']['~VALUE'] ?></div>
@@ -149,11 +148,11 @@ switch ($countMOB) {
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if ($arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE']) : ?>
+                                <?/*php if ($arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE']) : ?>
                                     <div class="b-detail">
                                         <button data-form-title="<?= $arItem['NAME'] ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     </div>
-                                <?php endif; ?>
+                                <?php endif; */ ?>
                             </div>
                         </div>
                     </div>
