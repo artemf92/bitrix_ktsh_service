@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  8 => 
+  array (
+    'CONDITION' => '#^/objects/([0-9a-zA-Z_-]+)/.*#',
+    'RULE' => 'ELEMENT_CODE=$1',
+    'ID' => '',
+    'PATH' => '/objects/detail.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/before-after/#',
@@ -30,14 +38,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/polezno/index.php',
-    'SORT' => 100,
-  ),
-  6 => 
-  array (
-    'CONDITION' => '#^/objects/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/objects/index.php',
     'SORT' => 100,
   ),
   0 => 

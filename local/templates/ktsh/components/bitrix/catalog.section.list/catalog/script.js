@@ -20,12 +20,12 @@ $(document).ready(function(){
     $('#b-catalog-tabs button').on('click', function (e) {
         let target = $(this).attr('data-target')
         window.location.hash = target;
-
     });
 
     $('#b-catalog-tabs button[data-toggle="tab"]').on('shown.bs.tab', function (event) {
         $('.b-catalog-products .b-item-content .b-title').matchHeight();
         $('.b-catalog-products .b-item-content .b-text').matchHeight();
+        ttlazy('data-src')
     })
 
     $('#b-catalog-detail-modal').on('show.bs.modal', function (e) {
