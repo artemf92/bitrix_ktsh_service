@@ -44,9 +44,22 @@ $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
 
+$arCoords = $arObjects = [];
+foreach ($arResult['SECTIONS'] as $key => &$arSection) {
+	if ($arSection['UF_LOCATION']) {
+		$arCoords[] = $arSection['UF_LOCATION'];
+		$arObjects[$key] = $arSection;
+		$arSelect = array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_LOCATION", "PROPERTY_CITY");
+		$arFilter = array("IBLOCK_ID" => 14, "SECTION_ID" => $arSection['ID']);
+		$res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
+		while ($ob = $res->GetNextElement()) {
+			$arObjects[$key]['ITEMS'][] = $ob->GetFields();
+		}
+	}
+}
 ?>
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script> <!-- Создаём контейнер для карты -->
+<script src="https://api-maps.yandex.ru/2.1/?apikey=5e353c3e-e42e-49cb-becf-b093bebcbd53&lang=ru_RU" type="text/javascript"></script> <!-- Создаём контейнер для карты -->
 <div id="map" style="width: 100%; height: 550px">
 </div>
 <script type="text/javascript">
@@ -60,53 +73,84 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 			controls: [
 
 				'zoomControl', // Ползунок масштаба
-				'rulerControl', // Линейка
-				'routeButtonControl', // Панель маршрутизации
-				'trafficControl', // Пробки
-				'typeSelector', // Переключатель слоев карты
-				'fullscreenControl', // Полноэкранный режим
+				// 'rulerControl', // Линейка
+				// 'routeButtonControl', // Панель маршрутизации
+				// 'trafficControl', // Пробки
+				// 'typeSelector', // Переключатель слоев карты
+				// 'fullscreenControl', // Полноэкранный режим
 
-				new ymaps.control.SearchControl({
-					options: {
-						size: 'large',
-						provider: 'yandex#search'
-					}
-				})
+				// new ymaps.control.SearchControl({
+				// 	options: {
+				// 		size: 'large',
+				// 		provider: 'yandex#search'
+				// 	}
+				// })
 
 			]
 		});
 
 		var myPlacemark = new ymaps.Placemark([54.74820659, 20.45834014], {
 			hintContent: 'УК "КТСХ Сервис"',
-			balloonContent: '236001 , Калининград, ул. Горького 176Г к. 2, п. 8'
+			balloonContent: `
+			<p><strong>Офис</strong></p>
+			<p>236001 , Калининград, ул. Горького 176Г к. 2, п. 8</p>`
+		}, {
+			preset: 'islands#redCircleDotIcon'
 		});
 
 		myMap.geoObjects.add(myPlacemark);
 
-		<? foreach ($arResult['SECTIONS'] as &$arSection) { ?>
-			<?
-			if ($arSection['UF_LOCATION']) {
-				// $arSelect = array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_LOCATION");
-				$arSelect = [];
-				$arFilter = array("IBLOCK_ID" => 14, "SECTION_ID" => $arSection['ID']);
-				$res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
-				$arObjects = [];
-				while ($ob = $res->GetNextElement()) {
-					$arObjects[] = $ob->GetFields();
+		let coords = [<?= implode(',', $arCoords) ?>];
+
+		var myGeoObjects = [];
+
+		<? foreach ($arObjects as $i => $object) { ?>
+			myGeoObjects_<?= $object['ID'] ?> = new ymaps.GeoObject({
+				geometry: {
+					type: "Point",
+					coordinates: <?= $arCoords[$i] ?>
+				},
+				properties: {
+					clusterCaption: 'ЖК "<?= $object['NAME'] ?>"',
+					balloonContentHeader: 'ЖК "<?= $object['NAME'] ?>"',
+					balloonContentBody: `
+						<ul class="list-group">
+							<? foreach ($object['ITEMS'] as $obj) { ?>
+							<li>
+								<div class="mb-2">
+									<p class="mb-1"><strong><?= $obj['PROPERTY_CITY_VALUE'] . ', ' . $obj['NAME'] ?></strong></p>
+									<a href="<?= $obj['DETAIL_PAGE_URL'] ?>">Смотреть подробнее</a>
+								</div>
+							</li>
+							<? } ?>
+						`,
+					// balloonContentFooter: 'Информация предоставлена:<br/>OOO "Рога и копыта"',
 				}
-			?>
-				var object_<?= $arSection['ID'] ?> = new ymaps.Placemark(<?= $arSection['UF_LOCATION'] ?>, {
-					hintContent: 'ЖК "<?= $arSection['NAME'] ?>"',
-					balloonContent: `
-			<strong>ЖК "<?= $arSection['NAME'] ?>"</strong>
-			<ul>
-				<? foreach ($arObjects as $obj) { ?>
-				<li><a href="<?= $obj['DETAIL_PAGE_URL'] ?>"><?= $obj['NAME'] ?></a></li>
-				<? } ?>
-			`
-				});
-				myMap.geoObjects.add(object_<?= $arSection['ID'] ?>);
-			<? } ?>
+			});
+			myGeoObjects.push(myGeoObjects_<?= $object['ID'] ?>)
 		<? } ?>
+
+		var myClusterer = new ymaps.Clusterer({
+			clusterDisableClickZoom: true
+		});
+		myClusterer.add(myGeoObjects);
+		myMap.geoObjects.add(myClusterer);
+
+		const query = new URLSearchParams(document.location.search)
+
+		if (query.get('id')) {
+			myMap.setCenter(myGeoObjects_<?= $_GET['id'] ?>.geometry._coordinates, 14, {
+				duration: 1000
+			});
+			setTimeout(() => {
+				var objectState = myClusterer.getObjectState(myGeoObjects_<?= $_GET['id'] ?>);
+				if (objectState.isClustered) {
+					objectState.cluster.state.set('activeObject', myGeoObjects_<?= $_GET['id'] ?>);
+					myClusterer.balloon.open(objectState.cluster);
+				} else if (objectState.isShown) {
+					myGeoObjects_<?= $_GET['id'] ?>.balloon.open();
+				}
+			}, 1100);
+		}
 	}
 </script>

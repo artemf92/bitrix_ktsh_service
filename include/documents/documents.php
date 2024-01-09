@@ -2,8 +2,8 @@
     <?php
     CModule::IncludeModule('iblock');
     $arResult = [];
-    $arFilter = array("IBLOCK_ID" => "21", 'GLOBAL_ACTIVE' => 'Y');
-    $dblist = CIBlockSection::GetList(array("SORT" => "ASC"), $arFilter, true, array());
+    $arFilter = array("IBLOCK_ID" => "21", 'GLOBAL_ACTIVE' => 'Y', 'UF_SHOW_ON_MAIN' => true);
+    $dblist = CIBlockSection::GetList(array("SECTION_ID" => "DESC"), $arFilter, true, array());
     $i = 0;
     while ($ar_result = $dblist->GetNext()) {
         $arResult[$i]['ID'] = $ar_result['ID'];
@@ -11,7 +11,7 @@
         if ($ar_result['ID']) {
             $arElSelect = array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_TEXT", "PREVIEW_PICTURE", "PROPERTY_FILE");
             $arElFilter = array("IBLOCK_ID" => "21", "ACTIVE" => "Y", 'SECTION_ID' => $ar_result['ID']);
-            $res = CIBlockElement::GetList(array(), $arElFilter, false, false, $arElSelect);
+            $res = CIBlockElement::GetList(array("ID" => "DESC"), $arElFilter, false, ['nTopCount' => 5], $arElSelect);
             $j = 0;
             while ($ob = $res->GetNextElement()) {
                 $arElFields = $ob->GetFields();
@@ -63,8 +63,11 @@
 
                                             </span>
                                             <span class=" name">
-                                                <?= $fileName ?></a>
-                                        </span>
+                                                Скачать
+                                                <? //= $fileName 
+                                                ?>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -73,5 +76,6 @@
                 </div>
             <?php endforeach; ?>
         </div>
+        <?//<a href="/documents" class="btn b-btn btn-primary btn-center">Все документы</a>?>
     <?php endif; ?>
 </div>

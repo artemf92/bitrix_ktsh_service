@@ -1,0 +1,14 @@
+ul.years_filter {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.years_filter li {
+    margin-right: 20px;
+}
+ul.years_filter li a[href] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}

@@ -342,6 +342,92 @@
   box-shadow: 0 0 10px #0b96d788;
   text-decoration: none;
 }
+.slick-slider__arrow-wrap {
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.slick-slider__arrow_next {
+  margin-left: 10px;
+  transform: rotate(180deg) translateY(8px);
+  right: -15px;
+}
+.slick-slider__arrow_prev {
+  margin-right: 10px;
+  left: -15px;
+}
+#b-catalog-tabs li {
+  margin-bottom: 0 !important;
+}
+#b-catalog-tabs::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.01866684173669464) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.01866684173669464) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.01866684173669464) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.b-catalog-subcategory {
+  padding: 0 20px;
+  margin: 0 0 30px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.b-catalog-subcategory li {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+a.b-btn {
+    display: inline-flex;
+    align-items: center;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0798d4;
+    border-color: #0798d4;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0b96d7;
+    border-color: #0b96d7;
+}
+.btn-center {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex !important;
+    max-width: max-content;
+}
+.b-header-socials a {
+    font-size: 40px;
+    color: #0898d4;
+    margin-right: 20px;
+}
 @media (max-width: 1200px) {
   .b-mobile-search {
     width: initial;
@@ -441,6 +527,10 @@
   }
   .b-mobile-whatsapp {
     display: none !important;
+  }
+  #b-catalog-tabs {
+    max-width: 90%;
+    margin: auto;
   }
 }
 @media (max-width: 575px) {

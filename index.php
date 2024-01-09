@@ -10,6 +10,11 @@ $arOrder = explode(',', $indexOptions['VALUE']);
 
 ?>
 <div class="b-home-content">
+    <? $APPLICATION->IncludeFile(
+        "/include/main/main.php",
+        array(),
+        array("MODE" => "php")
+    ); ?>
     <?php //home slider
     ?>
     <div class="b-home-block" data-order="-1">
@@ -181,26 +186,40 @@ $arOrder = explode(',', $indexOptions['VALUE']);
                         </div>
                     </div>
                     <? $APPLICATION->IncludeComponent(
-                        "bitrix:catalog.section.list",
-                        "catalog",
-                        array(
-                            "VIEW_MODE" => "TEXT",
-                            "SHOW_PARENT_NAME" => "Y",
-                            "IBLOCK_TYPE" => "content",
-                            "IBLOCK_ID" => "2",
-                            "SECTION_CODE" => "",
-                            "SECTION_URL" => "",
-                            "COUNT_ELEMENTS" => "N",
-                            "TOP_DEPTH" => "1",
-                            "SECTION_FIELDS" => "",
-                            "SECTION_USER_FIELDS" => "",
-                            "ADD_SECTIONS_CHAIN" => "N",
-                            "CACHE_TYPE" => "A",
-                            "CACHE_TIME" => "36000000",
-                            "CACHE_NOTES" => "",
-                            "CACHE_GROUPS" => "Y"
-                        )
-                    ); ?>
+	"bitrix:catalog.section.list", 
+	"catalog", 
+	array(
+		"VIEW_MODE" => "TEXT",
+		"SHOW_PARENT_NAME" => "Y",
+		"IBLOCK_TYPE" => "content",
+		"IBLOCK_ID" => "2",
+		"SECTION_CODE" => "",
+		"SECTION_URL" => "",
+		"COUNT_ELEMENTS" => "N",
+		"TOP_DEPTH" => "2",
+		"SECTION_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_NOTES" => "",
+		"CACHE_GROUPS" => "Y",
+		"COMPONENT_TEMPLATE" => "catalog",
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+		"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+		"FILTER_NAME" => "sectionsFilter",
+		"CACHE_FILTER" => "N"
+	),
+	false
+); ?>
                 </div>
             </div>
         </div>
@@ -238,61 +257,29 @@ $arOrder = explode(',', $indexOptions['VALUE']);
                         </div>
                     </div>
                     <? $APPLICATION->IncludeComponent(
-                        "bitrix:news.list",
-                        "services-list",
+                        "bitrix:catalog.section.list",
+                        "main_objects",
                         array(
-                            "DISPLAY_DATE" => "Y",
-                            "DISPLAY_NAME" => "Y",
-                            "DISPLAY_PICTURE" => "Y",
-                            "DISPLAY_PREVIEW_TEXT" => "Y",
-                            "AJAX_MODE" => "N",
-                            "IBLOCK_TYPE" => "content",
-                            "IBLOCK_ID" => "14",
-                            "NEWS_COUNT" => "8",
-                            "SORT_BY1" => "SORT",
-                            "SORT_ORDER1" => "ASC",
-                            "SORT_BY2" => "SORT",
-                            "SORT_ORDER2" => "ASC",
-                            "FILTER_NAME" => "",
-                            "FIELD_CODE" => array("ID"),
-                            "PROPERTY_CODE" => array("PRICE"),
-                            "CHECK_DATES" => "Y",
-                            "DETAIL_URL" => "",
-                            "PREVIEW_TRUNCATE_LEN" => "",
-                            "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                            "SET_TITLE" => "N",
-                            "SET_BROWSER_TITLE" => "N",
-                            "SET_META_KEYWORDS" => "N",
-                            "SET_META_DESCRIPTION" => "N",
-                            "SET_LAST_MODIFIED" => "N",
-                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                            "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
                             "ADD_SECTIONS_CHAIN" => "N",
-                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                            "PARENT_SECTION" => "",
-                            "PARENT_SECTION_CODE" => "",
-                            "INCLUDE_SUBSECTIONS" => "Y",
-                            "CACHE_TYPE" => "A",
-                            "CACHE_TIME" => "3600",
-                            "CACHE_FILTER" => "Y",
+                            "CACHE_FILTER" => "N",
                             "CACHE_GROUPS" => "Y",
-                            "DISPLAY_TOP_PAGER" => "N",
-                            "DISPLAY_BOTTOM_PAGER" => "N",
-                            "PAGER_TITLE" => "Новости",
-                            "PAGER_SHOW_ALWAYS" => "N",
-                            "PAGER_TEMPLATE" => "",
-                            "PAGER_DESC_NUMBERING" => "N",
-                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                            "PAGER_SHOW_ALL" => "N",
-                            "PAGER_BASE_LINK_ENABLE" => "N",
-                            "SET_STATUS_404" => "N",
-                            "SHOW_404" => "N",
-                            "MESSAGE_404" => "",
-                            "PAGER_BASE_LINK" => "",
-                            "PAGER_PARAMS_NAME" => "arrPager",
-                            "AJAX_OPTION_JUMP" => "N",
-                            "AJAX_OPTION_STYLE" => "Y",
-                            "AJAX_OPTION_HISTORY" => "N",
-                            "AJAX_OPTION_ADDITIONAL" => ""
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_TYPE" => "A",
+                            "COUNT_ELEMENTS" => "N",
+                            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                            "FILTER_NAME" => "sectionsFilter",
+                            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+                            "IBLOCK_ID" => "14",
+                            "IBLOCK_TYPE" => "content",
+                            "SECTION_CODE" => "",
+                            "SECTION_FIELDS" => array("", ""),
+                            "SECTION_ID" => "",
+                            "SECTION_URL" => "",
+                            "SECTION_USER_FIELDS" => array("", ""),
+                            "SHOW_PARENT_NAME" => "Y",
+                            "TOP_DEPTH" => "2",
+                            "VIEW_MODE" => "LINE"
                         )
                     ); ?>
                 </div>
@@ -343,8 +330,8 @@ $arOrder = explode(',', $indexOptions['VALUE']);
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "1",
 		"NEWS_COUNT" => "3",
-		"SORT_BY1" => "SORT",
-		"SORT_ORDER1" => "ASC",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
 		"FILTER_NAME" => "",
@@ -1494,88 +1481,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
         </div>
     <?php endif; ?>
 
-    <div id="block-leadership" class="b-home-block" data-order="<?= intval(array_keys($arOrder, "BLOCK_PERSONAL")[0]) - 1; ?>" style="background-image: url(<?= $bgImage ?>); background-position: 50% 50%; background-size: cover; background-color: <?= $themeSettings['INDEX']['OPTIONS']['BLOCK_PERSONAL_BACKGROUND_COLOR']['VALUE'] ?>">
-        <div class="b-partners-block b-block">
-            <div class="container">
-                <div class="b-block-title-wrap">
-                    <div class="b-block-title">
-                        <? $APPLICATION->IncludeFile(
-                            "/include/home/leadership-block-title.php",
-                            array(),
-                            array("MODE" => "php")
-                        ); ?>
-                    </div>
-                    <div class="b-block-subtitle">
-                        <? $APPLICATION->IncludeFile(
-                            "/include/home/leadership-block-subtitle.php",
-                            array(),
-                            array("MODE" => "php")
-                        ); ?>
-                    </div>
-                </div>
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:news.list",
-                    "leadership-list",
-                    array(
-                        "DISPLAY_DATE" => "Y",
-                        "DISPLAY_NAME" => "Y",
-                        "DISPLAY_PICTURE" => "Y",
-                        "DISPLAY_PREVIEW_TEXT" => "Y",
-                        "AJAX_MODE" => "N",
-                        "IBLOCK_TYPE" => "content",
-                        "IBLOCK_ID" => "20",
-                        "NEWS_COUNT" => "99",
-                        "SORT_BY1" => "SORT",
-                        "SORT_ORDER1" => "ASC",
-                        "SORT_BY2" => "SORT",
-                        "SORT_ORDER2" => "ASC",
-                        "FILTER_NAME" => "arrFilter",
-                        "FIELD_CODE" => array("ID", "DETAIL_PICTURE"),
-                        "PROPERTY_CODE" => array("PHOTO"),
-                        "CHECK_DATES" => "N",
-                        "DETAIL_URL" => "",
-                        "PREVIEW_TRUNCATE_LEN" => "",
-                        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                        "SET_TITLE" => "N",
-                        "SET_BROWSER_TITLE" => "N",
-                        "SET_META_KEYWORDS" => "N",
-                        "SET_META_DESCRIPTION" => "N",
-                        "SET_LAST_MODIFIED" => "N",
-                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                        "ADD_SECTIONS_CHAIN" => "N",
-                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                        "PARENT_SECTION" => "",
-                        "PARENT_SECTION_CODE" => "",
-                        "INCLUDE_SUBSECTIONS" => "Y",
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => "3600",
-                        "CACHE_FILTER" => "Y",
-                        "CACHE_GROUPS" => "Y",
-                        "DISPLAY_TOP_PAGER" => "N",
-                        "DISPLAY_BOTTOM_PAGER" => "N",
-                        "PAGER_TITLE" => "Новости",
-                        "PAGER_SHOW_ALWAYS" => "N",
-                        "PAGER_TEMPLATE" => "",
-                        "PAGER_DESC_NUMBERING" => "N",
-                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                        "PAGER_SHOW_ALL" => "N",
-                        "PAGER_BASE_LINK_ENABLE" => "N",
-                        "SET_STATUS_404" => "N",
-                        "SHOW_404" => "N",
-                        "MESSAGE_404" => "",
-                        "PAGER_BASE_LINK" => "",
-                        "PAGER_PARAMS_NAME" => "arrPager",
-                        "AJAX_OPTION_JUMP" => "N",
-                        "AJAX_OPTION_STYLE" => "Y",
-                        "AJAX_OPTION_HISTORY" => "N",
-                        "AJAX_OPTION_ADDITIONAL" => ""
-                    )
-                ); ?>
-            </div>
-        </div>
-    </div>
-
-    <div id="block-documents" class="b-home-block" data-order="20">
+    <div id="block-documents" class="b-home-block" data-order="8">
         <div class="b-documents-block b-block">
             <div class="container">
                 <div class="b-block-title-wrap">
@@ -1602,7 +1508,34 @@ $arOrder = explode(',', $indexOptions['VALUE']);
             </div>
         </div>
     </div>
-
+    
+    <div id="block-safety" class="b-home-block" data-order="10">
+        <div class="b-documents-block b-block">
+            <div class="container">
+                <div class="b-block-title-wrap">
+                    <div class="b-block-title">
+                        <? $APPLICATION->IncludeFile(
+                            "/include/home/safety-block-title.php",
+                            array(),
+                            array("MODE" => "php")
+                        ); ?>
+                    </div>
+                    <div class="b-block-subtitle">
+                        <? $APPLICATION->IncludeFile(
+                            "/include/home/safety-block-subtitle.php",
+                            array(),
+                            array("MODE" => "php")
+                        ); ?>
+                    </div>
+                </div>
+                <? $APPLICATION->IncludeFile(
+                    "/include/safety/safety.php",
+                    array(),
+                    array("MODE" => "php")
+                ); ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

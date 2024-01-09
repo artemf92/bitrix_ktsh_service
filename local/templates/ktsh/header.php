@@ -31,9 +31,12 @@ if (!Loader::includeModule('gedestudio.axiland')) {
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/bootstrap.min.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/jquery.fancybox.min.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/swiper.min.css"); ?>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/slick-theme.css"); ?>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/slick.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/hamburgers.min.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/fonts/fontello/css/fontello.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/priority-nav-core.css"); ?>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/main.css"); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/custom.css"); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.min.js"); ?>
     <? $APPLICATION->IncludeFile(
@@ -164,6 +167,11 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                     <input type="text" name="search" class="b-search" />
                                 </label>
                             </form>
+                        </div>
+                        <div class="b-header-socials">
+                            <a href="#" target="_blank" rel="nofollow">
+                                <i class="fab fa-telegram"></i>
+                            </a>
                         </div>
                         <div class="b-header-order">
                             <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="btn b-btn b-btn-primary">Оставить заявку</button>

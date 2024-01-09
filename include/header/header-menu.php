@@ -7,22 +7,54 @@ $arOrder = explode(',', $indexOptions['VALUE']);
 $blocks = $themeSettings['INDEX']['OPTIONS']['SORT_ORDER']['LIST'];
 $options = $themeSettings['INDEX']['OPTIONS'];
 
+$customLinks = [
+    'DOCUMENTS' => [
+        'TITLE' => 'Документы',
+        'VALUE' => 'Y',
+        'CUSTOM' => 'Y',
+        'POSITION' => 3,  // Позиция в меню "Документы"
+        'MENU_LINK' => '#block-documents'
+    ],
+    'SAFETY' => [
+        'TITLE' => 'Безопасность',
+        'VALUE' => 'Y',
+        'CUSTOM' => 'Y',
+        'POSITION' => 7,  
+        'MENU_LINK' => '#block-safety'
+    ],
+];
+foreach($customLinks as $k => $link) {
+    $blocks = array_merge(array_slice($blocks, 0, $link['POSITION']), [$k => $link], array_slice($blocks, $link['POSITION']));
+}
 ?>
 <nav class="b-main-menu">
     <ul class="">
         <?php foreach ($blocks as $key => $value) : ?>
             <?php
             if ($value['VALUE'] != 'Y') continue;
-            $menuBlock = Gedestudio::getMenuByBlockName($key);
-            if ($options[$menuBlock['MENU_NAME']]['VALUE'] == '') continue;
+            if (!$value['CUSTOM']) {
+                $menuBlock = Gedestudio::getMenuByBlockName($key);
+                if ($options[$menuBlock['MENU_NAME']]['VALUE'] == '') continue;
+            } else {
+                $options[$key] = $customLinks[$key];
+                $menuBlock['MENU_LINK'] = $key;
+                $menuBlock['MENU_NAME'] = $key . '_TITLE';
+                $options[$menuBlock['MENU_NAME']]['VALUE'] = $customLinks[$key]['TITLE'];
+                $options[$key]['VALUE'] = $options[$key]['MENU_LINK'];
+                $options[$key]['VALUE'] = $options[$key]['MENU_LINK'];
+            }
+
+            if ($APPLICATION->GetCurPage() != '/') {
+                $options[$menuBlock['MENU_LINK']]['VALUE'] = '/' . $options[$menuBlock['MENU_LINK']]['VALUE'];
+            }
             ?>
-            <li data-order="<?= array_keys($arOrder, $key)[0]; ?>">
+            <li data-order="<?= array_keys($arOrder, $key)[0] ?? $customLinks[$key]['POSITION']; ?>">
                 <a href="<?= $options[$menuBlock['MENU_LINK']]['VALUE'] ?>"><?= $options[$menuBlock['MENU_NAME']]['VALUE'] ?></a>
-                <? if ($options[$menuBlock['MENU_NAME']]['VALUE'] == 'Объекты') { ?>
+                <?/* if ($options[$menuBlock['MENU_NAME']]['VALUE'] == 'Объекты') { ?>
                     <ul class="submenu">
                         <li><a href="#" class="link">Объект #1</a></li>
                     </ul>
-                <? } ?>
+                <? } */?>
             </li>
         <?php endforeach; ?>
         <? $APPLICATION->IncludeFile(

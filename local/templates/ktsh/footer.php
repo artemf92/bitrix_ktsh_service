@@ -199,6 +199,7 @@ if ($fixedButtonShowMobile == 'Y') {
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/bootstrap.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/swiper.min.js"); ?>
+<? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/slick.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.validate.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.maskedinput.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/axios.min.js"); ?>

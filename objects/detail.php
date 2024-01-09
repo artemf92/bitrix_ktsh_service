@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Объекты");
   <div class="site-content with-sidebar">
     <div class="sidebar">
       <ul class="objects__tabs">
-        <li class="objects__tab"><a href="#tab1">Общая информация</a></li>
+        <li class="objects__tab"><a href="https://dom.gosuslugi.ru/#!/houses" target="_blank" rel="nofollow">Общая информация</a></li>
         <li class="objects__tab"><a href="#tab2">Провайдеры</a></li>
         <li class="objects__tab"><a href="#tab3">Документы</a></li>
         <li class="objects__tab"><a href="#tab4">Отчеты для жителей</a></li>
@@ -14,8 +14,8 @@ $APPLICATION->SetTitle("Объекты");
     </div>
     <div class="content">
       <? $APPLICATION->IncludeComponent(
-        "bitrix:news.detail", 
-        "object", 
+        "bitrix:news.detail",
+        "object",
         array(
           "ACTIVE_DATE_FORMAT" => "d.m.Y",
           "ADD_ELEMENT_CHAIN" => "Y",
@@ -55,7 +55,7 @@ $APPLICATION->SetTitle("Объекты");
           "PAGER_TEMPLATE" => ".default",
           "PAGER_TITLE" => "Страница",
           "PROPERTY_CODE" => array(
-            0 => "",
+            0 => "PROVIDERS",
             1 => "",
           ),
           "SET_BROWSER_TITLE" => "Y",

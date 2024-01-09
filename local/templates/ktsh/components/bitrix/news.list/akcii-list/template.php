@@ -90,11 +90,20 @@ switch ($countMOB) {
                     </div>
                     <div class="b-item-content-wrap">
                         <div class="b-item-content">
-                            <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="b-title d-block mb-2">
-                                <span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>">
-                                    <?= $arItem['NAME'] ?>
-                                </span>
-                            </a>
+                            <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
+                                <div class="b-title d-block mb-2">
+                                <? } else { ?>
+                                    <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="b-title d-block mb-2">
+                                    <? } ?>
+                                    <span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>">
+                                        <?= $arItem['NAME'] ?>
+                                    </span>
+                                    <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
+                                </div>
+                            <? } else { ?>
+                                </a>
+                            <? } ?>
+                            <div class="b-date mb-2 small text-muted"><?= $arItem['ACTIVE_FROM'] ?></div>
                             <?php if ($arItem['PREVIEW_TEXT']) : ?>
                                 <div class="b-text"><?= $arItem['PREVIEW_TEXT'] ?></div>
                             <?php elseif ($arItem['DETAIL_TEXT']) : ?>
@@ -108,13 +117,13 @@ switch ($countMOB) {
                             <div class="b-list-buttons">
                                 <?php if (!empty($arItem['PROPERTIES']['BUTTON_LINK']['VALUE'])) { ?>
                                     <a target="_blank" href="<?= $arItem['PROPERTIES']['BUTTON_LINK']['VALUE'] ?>">
-                                        <button class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <button class="btn b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     </a>
                                 <?php } else { ?>
                                     <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
-                                        <button data-toggle="modal" data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <button data-toggle="modal" data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>" class="btn b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     <?php } else { ?>
-                                        <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="<?= $arItem['NAME']; ?>" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="btn b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></a>
                                     <?php } ?>
                                 <?php } ?>
                             </div>

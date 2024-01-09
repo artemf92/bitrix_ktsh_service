@@ -95,3 +95,33 @@ div.news-detail img.detail_picture {
   font-size: 16px;
   font-weight: 600;
 }
+
+.b-btn-secondary.b-news-element:hover .b-text {
+  color: #fff !important;
+}
+.object-providers table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse; 
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+.object-providers table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.object-providers table tr td:first-of-type {
+  text-align: left;
+}
+.object-providers table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+.object-providers table tr td:first-child, object_table tr th:first-child {
+	border-left: none;
+}
+.object-providers table tr td:last-child, object_table tr th:last-child {
+	border-right: none;
+}

@@ -30,6 +30,21 @@ $(document).ready(function() {
     e.preventDefault()
     return false
   })
+
+  // Карусель категорий услуг
+  $('#b-catalog-tabs').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    variableWidth: true,
+    prevArrow:
+      '<div class="slick-slider__arrow-wrap slick-slider__arrow_prev slick-arrow" aria-disabled="false" style="display: flex;"><img src="/local/templates/ktsh/images/arrow.svg"></div>',
+    nextArrow:
+      '<div class="slick-slider__arrow-wrap slick-slider__arrow_next slick-arrow" style="display: flex;" aria-disabled="false"><img src="/local/templates/ktsh/images/arrow.svg"></div>',
+  })
+
+  initObjectsPictures()
 })
 $(document).on('click', function (e) {
   if (
@@ -56,3 +71,11 @@ $(document).on('click', '.mobile-search', function () {
   }
   $('.b-mobile-search').toggleClass('active')
 })
+
+function initObjectsPictures() {
+  setTimeout(() => {
+    $('#block-objects .b-img img').each((i,e) => {
+      $(e).attr('src',$(e).data('src'))
+    })
+  }, 100);
+}
