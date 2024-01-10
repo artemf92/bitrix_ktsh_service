@@ -38,4 +38,4 @@ test*.php
 .httpauth-disable
 .htsecure
 /bitrix
-#/upload
+/upload
