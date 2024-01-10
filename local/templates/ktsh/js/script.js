@@ -156,9 +156,13 @@ $(document).ready(function(){
     $('#b-zapis-form').on('show.bs.modal', function (e) {
         const parentModal = e.relatedTarget.closest('.b-modal');
         const formTitle = e.relatedTarget.getAttribute("data-form-title");
+        const formSubtitle = e.relatedTarget.getAttribute("data-form-subtitle");
         $(parentModal).modal('hide');
         document.querySelector('#b-zapis-form .b-zapis-form-title').innerText = formTitle;
         // document.querySelector('#b-zapis-form input[name="formName"]').value = formTitle;
+        if (formSubtitle) {
+            document.querySelector('#b-zapis-form .b-zapis-form-subtitle').innerText = formSubtitle;
+        }
     })
     $('#b-catalog-form').on('show.bs.modal', function (e) {
         $('#b-catalog-detail-modal').modal('hide');
