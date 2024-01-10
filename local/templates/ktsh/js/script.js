@@ -158,13 +158,13 @@ $(document).ready(function(){
         const formTitle = e.relatedTarget.getAttribute("data-form-title");
         $(parentModal).modal('hide');
         document.querySelector('#b-zapis-form .b-zapis-form-title').innerText = formTitle;
-        document.querySelector('#b-zapis-form input[name="formName"]').value = formTitle;
+        // document.querySelector('#b-zapis-form input[name="formName"]').value = formTitle;
     })
     $('#b-catalog-form').on('show.bs.modal', function (e) {
         $('#b-catalog-detail-modal').modal('hide');
         const formTitle = e.relatedTarget.getAttribute("data-form-title");
         document.querySelector('#b-catalog-form .b-zapis-form-title').innerText = formTitle;
-        document.querySelector('#b-catalog-form input[name="formName"]').value = formTitle;
+        // document.querySelector('#b-catalog-form input[name="formName"]').value = formTitle;
     })
 
     let slideUp = (target, duration) => {

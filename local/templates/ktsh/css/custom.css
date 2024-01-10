@@ -428,6 +428,9 @@ a.b-btn {
     color: #0898d4;
     margin-right: 20px;
 }
+.modal .b24-form-wrapper.b24-form-shadow {
+    box-shadow: none;
+}
 @media (max-width: 1200px) {
   .b-mobile-search {
     width: initial;
