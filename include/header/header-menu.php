@@ -12,14 +12,14 @@ $customLinks = [
         'TITLE' => 'Документы',
         'VALUE' => 'Y',
         'CUSTOM' => 'Y',
-        'POSITION' => 3,  // Позиция в меню "Документы"
+        'POSITION' => 1,  // Позиция в меню "Документы"
         'MENU_LINK' => '#block-documents'
     ],
     'SAFETY' => [
         'TITLE' => 'Безопасность',
         'VALUE' => 'Y',
         'CUSTOM' => 'Y',
-        'POSITION' => 7,  
+        'POSITION' => 8,  
         'MENU_LINK' => '#block-safety'
     ],
 ];

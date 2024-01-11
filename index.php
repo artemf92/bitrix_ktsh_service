@@ -1481,7 +1481,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
         </div>
     <?php endif; ?>
 
-    <div id="block-documents" class="b-home-block" data-order="8">
+    <div id="block-documents" class="b-home-block" data-order="1">
         <div class="b-documents-block b-block">
             <div class="container">
                 <div class="b-block-title-wrap">
@@ -1509,7 +1509,7 @@ $arOrder = explode(',', $indexOptions['VALUE']);
         </div>
     </div>
     
-    <div id="block-safety" class="b-home-block" data-order="10">
+    <div id="block-safety" class="b-home-block" data-order="8">
         <div class="b-documents-block b-block">
             <div class="container">
                 <div class="b-block-title-wrap">
