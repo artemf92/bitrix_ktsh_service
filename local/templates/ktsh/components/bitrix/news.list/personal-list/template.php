@@ -54,7 +54,7 @@ if ($count < 4) {
                             <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
                                 <button data-toggle="<?= $arItem['DETAIL_TEXT'] ? 'modal' : '' ?>" data-target="#b-personal-detail-modal-<?= $arItem['ID'] ?>" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                             <?php } else { ?>
-                                <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="<?= $arItem['PROPERTIES']['MODAL_TITLE']['~VALUE'] ?>" data-form-subtitle="<?= $arItem['PROPERTIES']['MODAL_SUBTITLE']['~VALUE'] ?>" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                <button data-toggle="modal" data-target="#b-zapis-form" data-form-param="<?= $arItem['PROPERTIES']['MODAL_TITLE']['~VALUE'] ?>" data-form-subtitle="<?= $arItem['PROPERTIES']['MODAL_SUBTITLE']['~VALUE'] ?>" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                             <?php } ?>
                         <?php } ?>
                     </div>

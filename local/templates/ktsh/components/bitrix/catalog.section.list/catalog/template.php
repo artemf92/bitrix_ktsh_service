@@ -135,7 +135,7 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                                                 </div>
                                                 <div class="b-list-buttons">
                                                     <?php if ($buttonName) : ?>
-                                                        <button data-toggle="modal" data-form-title="<?= $product['NAME'] ?>" data-target="#b-catalog-form" class="btn b-btn b-btn-catalog b-btn-secondary"><?= $buttonName ?></button>
+                                                        <button data-toggle="modal" data-form-title="" data-target="#b-catalog-form" class="btn b-btn b-btn-catalog b-btn-secondary"><?= $buttonName ?></button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
