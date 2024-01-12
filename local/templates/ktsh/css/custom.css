@@ -431,6 +431,25 @@ a.b-btn {
 .modal .b24-form-wrapper.b24-form-shadow {
     box-shadow: none;
 }
+.zapis-form {
+  max-width: 500px;
+  border-radius: 30px;
+}
+.zapis-form .b24-form-header {
+  display: none;
+}
+.zapis-form .b24-form-wrapper.b24-form-shadow {
+  box-shadow: none;
+}
+.zapis-form .fancybox-close-small {
+  right: 5px;
+}
+.fancybox-container--ready .fancybox-bg {
+  opacity: .5;
+}
+.zapis-form .b24-form-header-padding {
+  display: none;
+}
 @media (max-width: 1200px) {
   .b-mobile-search {
     width: initial;

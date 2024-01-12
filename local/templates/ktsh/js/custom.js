@@ -72,6 +72,44 @@ $(document).on('click', '.mobile-search', function () {
   $('.b-mobile-search').toggleClass('active')
 })
 
+$(document).on('click', '[data-toggle="modal"]', function(e) {
+  const modal = $(this).data('target').substr(1)
+  const formTitle = $(this).data("form-title");
+  const formSubtitle = $(this).data("form-subtitle");
+
+  $.fancybox.open({
+    type: 'ajax',
+    src: '/include/modals/' + modal + '.php',
+    opts: {
+      maxWidth: 420,
+      helpers: {
+        overlay: {
+          opacity: 0
+        }
+      },
+      beforeLoad: function (instance, current) {
+        window.addEventListener('b24:form:show', (event) => {
+          let form = event.detail.object
+          switch (form.identification.id) {
+            case 64:
+              form.setProperty('service', formTitle)
+              break;
+            case 62:
+              form.setProperty('target', formTitle)
+              break;
+            default:
+              break;
+          }
+        })
+      },
+      afterLoad: function (instance, current) {
+        $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
+        $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
+      }
+    },
+  })
+})
+
 function initObjectsPictures() {
   setTimeout(() => {
     $('#block-objects .b-img img').each((i,e) => {

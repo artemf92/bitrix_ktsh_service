@@ -151,14 +151,6 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
         </div>
     </div>
 
-    <?php
-    $APPLICATION->IncludeFile(
-        SITE_DIR . "include/home/catalog-modal-form.php",
-        array("BUTTON_NAME" => $buttonName),
-        array("MODE" => "php")
-    );
-    ?>
-
     <div class="modal b-modal fade" id="b-catalog-detail-modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">

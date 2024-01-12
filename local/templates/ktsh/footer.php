@@ -121,45 +121,6 @@ $themeSettings = gedeGetAdminParams();
 ?>
 </div> <? //site-wrap 
         ?>
-<div class="modal b-modal fade" id="b-zapis-form" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <?php
-                $yaMetricTarget = $themeSettings['INDEX']['OPTIONS']['BLOCK_YM_TARGET_NAME']['VALUE'] ?? false;
-                $yaMetricID = $themeSettings['INDEX']['OPTIONS']['BLOCK_YM_ID']['VALUE'] ?? false;
-
-                $APPLICATION->IncludeComponent(
-                    "bitrix:main.feedback",
-                    "zapis",
-                    array(
-                        "REQUIRED_FIELDS" => array(
-                            0 => "PHONE",
-                        ),
-                        "COMPONENT_TEMPLATE" => "zapis",
-                        "EVENT_MESSAGE_ID" => "33",
-                        "YA_METRIC_TARGET" => $yaMetricTarget,
-                        "YA_METRIC_ID" => $yaMetricID,
-                        "ELEMENT_FORM" => array(
-                            //Available fields COUNT, DATE, ADDRESS, COMMENT, FILE, NAME, PHONE, EMAIL
-                            0 => "DATE",
-                            1 => "COMMENT",
-                            2 => "NAME",
-                            3 => "PHONE",
-                        ),
-                        "USE_CAPTCHA" => "N",
-                        "OK_TEXT" => "",
-                        "FORM_NAME_SUBMIT" => GetMessage('GEDE_FOOTER_MODAL_FORM_SUBMIT'),
-                        "AJAX_HANDLER" => "/ajax/sendMessage.php",
-                        "DUPLICATE_MESSAGES" => "N",
-                    ),
-                    false
-                ); ?>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php
 $fixedButtonText = $themeSettings['INDEX']['OPTIONS']['BLOCK_FIXED_BUTTON_NAME']['VALUE'] ?? false;
