@@ -174,7 +174,7 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                             </a>
                         </div>
                         <div class="b-header-order">
-                            <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="btn b-btn b-btn-primary">Оставить заявку</button>
+                            <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Электронное обращение" class="btn b-btn b-btn-primary">Напишите нам</button>
                         </div>
                         <div class="b-header-cabinet">
                             <a href="#" class="link-cabinet">

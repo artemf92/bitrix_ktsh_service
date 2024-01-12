@@ -158,7 +158,7 @@
 .intro__content {
     min-height: 190px;
     color: #fff;
-    background: #4285f4
+    background: #0898d4
 }
 
 .intro__cell,.intro__content .page__inner {
@@ -197,7 +197,8 @@
 }
 
 .intro__text {
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 0 0 20px;
     font-size: 16px;
     line-height: 1
@@ -436,4 +437,19 @@
 }
  .intro__content .btn_white {
     border: 1px solid rgba(255,255,255,.5);
+}
+@media (max-width: 768px) {
+    .intro__cell:nth-child(1) .intro__text,
+    .intro__text {
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .intro__cell:nth-child(1) .intro__text,
+    .intro__text {
+        font-size: 15px;
+    }
+    .intro__content .btn {
+        font-size: 14px;
+    }
 }

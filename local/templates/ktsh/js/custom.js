@@ -1,17 +1,17 @@
 $(document).ready(function() {
-  if ($(window).width() <= 768) {
-    $('.b-main-menu ul:not(.submenu) li a').on('click', function (event) {
-      console.log($(this).siblings('ul.submenu').length)
-      event.preventDefault()
-      if ($(this).siblings('ul.submenu').length) {
-        $(this).siblings('ul.submenu').slideToggle()
-      }
+  // if ($(window).width() <= 768) {
+  //   $('.b-main-menu ul:not(.submenu) li a').on('click', function (event) {
+  //     console.log($(this).siblings('ul.submenu').length)
+  //     event.preventDefault()
+  //     if ($(this).siblings('ul.submenu').length) {
+  //       $(this).siblings('ul.submenu').slideToggle()
+  //     }
 
-      // if ($(this).siblings('ul.submenu').length) {
+  //     // if ($(this).siblings('ul.submenu').length) {
 
-      // }
-    })
-  }
+  //     // }
+  //   })
+  // }
   // SCROLL ANCHOR
   $("a[href^='#']:not(.show-more)").on('click', function (e) {
     var fixed_offset = 35
@@ -76,6 +76,7 @@ $(document).on('click', '[data-toggle="modal"]', function(e) {
   const modal = $(this).data('target').substr(1)
   const formTitle = $(this).data("form-title");
   const formSubtitle = $(this).data("form-subtitle");
+  const param = $(this).data('form-param')
 
   $.fancybox.open({
     type: 'ajax',
@@ -95,7 +96,7 @@ $(document).on('click', '[data-toggle="modal"]', function(e) {
               form.setProperty('service', formTitle)
               break;
             case 62:
-              form.setProperty('target', formTitle)
+              form.setProperty('target', param)
               break;
             default:
               break;
@@ -103,8 +104,10 @@ $(document).on('click', '[data-toggle="modal"]', function(e) {
         })
       },
       afterLoad: function (instance, current) {
-        $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
-        $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
+        if (formTitle)
+          $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
+        if (formSubtitle)
+          $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
       }
     },
   })

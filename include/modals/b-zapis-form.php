@@ -1,7 +1,7 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php"); ?>
 <div class="zapis-form">
-  <div class="b-zapis-form-title"></div>
-  <div class="b-zapis-form-subtitle"></div>
+  <div class="b-zapis-form-title">Электронное обращение</div>
+  <div class="b-zapis-form-subtitle">С порядком приема и рассмотрения электронных обращений можно ознакомиться по <a href="/include/doc1.docx" download="ПОРЯДОК приема и рассмотрения обращений в электронной форме в ООО «КТСХ-Сервис»">ссылке</a></div>
   <script data-b24-form="inline/62/o5qm2l" data-skip-moving="true">
     (function(w, d, u) {
       var s = d.createElement('script');

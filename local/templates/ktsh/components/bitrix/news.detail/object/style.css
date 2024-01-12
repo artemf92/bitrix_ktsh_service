@@ -8,6 +8,9 @@ div.news-detail img.detail_picture {
 .news-date-time {
   color: #486daa;
 }
+.object-providers {
+  overflow-x: scroll;
+}
 .site-content.with-sidebar {
   display: flex;
   gap: 20px;

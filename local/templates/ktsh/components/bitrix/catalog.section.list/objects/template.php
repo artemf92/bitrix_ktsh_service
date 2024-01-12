@@ -86,8 +86,11 @@ foreach ($arResult['SECTIONS'] as $key => &$arSection) {
 				// 	}
 				// })
 
-			]
+			],
 		});
+
+		myMap.behaviors.disable('scrollZoom');
+
 
 		var myPlacemark = new ymaps.Placemark([54.74820659, 20.45834014], {
 			hintContent: 'УК "КТСХ Сервис"',
