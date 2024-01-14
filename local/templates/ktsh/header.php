@@ -166,6 +166,7 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                     </div>
                                     <input type="text" name="search" class="b-search" />
                                 </label>
+                                <div id="resultsContainer"></div>
                             </form>
                         </div>
                         <div class="b-header-socials">

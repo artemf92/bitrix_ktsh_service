@@ -157,6 +157,17 @@ if ($fixedButtonShowMobile == 'Y') {
     </div>
 </div>
 
+<div class="search-bar">
+    <input type="text" id="searchbar-text">
+    <span class="search-bar__nav search-bar__nav--prev"></span>
+    <span class="search-bar__nav search-bar__nav--next"></span>
+    <span class="search-bar__clear" data-fa-search-clear>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+        </svg>
+    </span>
+</div>
+
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/bootstrap.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/swiper.min.js"); ?>
@@ -168,6 +179,7 @@ if ($fixedButtonShowMobile == 'Y') {
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.matchHeight.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/ttlazy.min.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script.js"); ?>
+<? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/search.js"); ?>
 <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/custom.js"); ?>
 
 

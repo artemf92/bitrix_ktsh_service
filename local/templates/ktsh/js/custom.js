@@ -56,15 +56,15 @@ $(document).on('click', function (e) {
 })
 $(document).on('click', '.b-header-search', function() {
   if (!$(this).hasClass('active')) {
-    $(this).find('input').focus()
     $(this).toggleClass('active')
+    $(this).find('input').focus()
   }
 })
-$(document).on('blur', '.b-header-search input', function () {
-  $(this).find('input').blur()
-  $(this).val('')
-  $(this).closest('.b-header-search').toggleClass('active')
-})
+// $(document).on('blur', '.b-header-search input', function () {
+//   $(this).find('input').blur()
+//   $(this).val('')
+//   $(this).closest('.b-header-search').toggleClass('active')
+// })
 $(document).on('click', '.mobile-search', function () {
   if (!$('.b-mobile-search').hasClass('active')) {
     $('.b-mobile-search input').focus()
