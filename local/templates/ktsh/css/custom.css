@@ -685,6 +685,12 @@ a.b-btn {
   .b-main-menu {
     background-color: #fff !important;
   }
+  .b-services-list .b-item .b-title {
+    margin-bottom: 0 !important;
+  }
+  .b-services-list .b-item .b-title span {
+    text-transform: none !important;
+  }
 }
 @media (max-width: 768px) {
   .b-main-menu ul.submenu {
@@ -752,6 +758,10 @@ a.b-btn {
   .b-services-list .b-item .b-title span {
     font-weight: 400 !important;
   }
+  .b-btn-catalog {
+    height: 36px !important;
+    padding: 4px 25px !important;
+  }
 }
 @media (max-width: 575px) {
   .site-slider .b-slide-content {
@@ -796,6 +806,10 @@ a.b-btn {
   }
 }
 @media (max-width: 375px) {
+  .header .b-logo {
+    max-width: 170px;
+    margin: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .site-slider .b-slider-img {

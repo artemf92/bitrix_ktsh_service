@@ -95,7 +95,7 @@
                         <? //<div class="footer-contacts__phone-text">Круглосуточный клиентский центр<br>Звонок бесплатный</div> 
                         ?>
                     </div>
-                    <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="###" class="btn b-btn b-btn-primary">Оставить заявку</button>
+                    <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="###" class="btn b-btn b-btn-primary">Электронное обращение</button>
                 </div>
             </div>
         </section>

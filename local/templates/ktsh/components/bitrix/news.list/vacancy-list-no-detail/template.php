@@ -52,7 +52,7 @@ switch ($countMOB){
         break;
 }
 if (0 == count($arResult['ITEMS'])) {
-    echo '<button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="b-btn b-btn-primary btn d-block m-auto">Оставить заявку</button>';
+    echo '<button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Электронное обращение" class="b-btn b-btn-primary btn d-block m-auto">Электронное обращение</button>';
 }
 ?>
 <div class="b-polezno-list">

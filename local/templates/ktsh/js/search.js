@@ -30,6 +30,7 @@ class FaSearch {
     this.currentPosition = 0
     this.searchTerm = event.target.value
     this.searchInput.value = this.searchBarInput.value = this.searchTerm
+    alert(this.searchTerm)
 
     if (this.searchTerm.length <= 3) {
       Array.from(this.sections).forEach((section) => {
