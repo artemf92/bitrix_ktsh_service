@@ -19,11 +19,11 @@ $customLinks = [
         'TITLE' => 'Безопасность',
         'VALUE' => 'Y',
         'CUSTOM' => 'Y',
-        'POSITION' => 8,  
+        'POSITION' => 8,
         'MENU_LINK' => '#block-safety'
     ],
 ];
-foreach($customLinks as $k => $link) {
+foreach ($customLinks as $k => $link) {
     $blocks = array_merge(array_slice($blocks, 0, $link['POSITION']), [$k => $link], array_slice($blocks, $link['POSITION']));
 }
 ?>
@@ -54,7 +54,7 @@ foreach($customLinks as $k => $link) {
                     <ul class="submenu">
                         <li><a href="#" class="link">Объект #1</a></li>
                     </ul>
-                <? } */?>
+                <? } */ ?>
             </li>
         <?php endforeach; ?>
         <? $APPLICATION->IncludeFile(
@@ -74,7 +74,7 @@ foreach($customLinks as $k => $link) {
             </div>
             Личный кабинет
         </a>
-        <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Оставить заявку" class="btn b-btn b-btn-primary">Оставить заявку</button>
+        <button data-toggle="modal" style="color: yellow" data-target="#b-zapis-form" class="btn b-btn b-btn-primary">Напишите нам</button>
         <button class="mobile-search">
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#0898d4" class="bi bi-search" viewBox="0 0 16 16">
