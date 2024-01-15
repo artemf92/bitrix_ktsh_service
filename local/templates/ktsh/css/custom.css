@@ -683,13 +683,20 @@ a.b-btn {
     display: none;
   }
   .b-main-menu {
-    background-color: #fff !important;
+    background-color: #151515 !important;
+  }
+  .b-main-menu li a,
+  .header .b-header-phone a {
+    color: #FFFF33 !important;
   }
   .b-services-list .b-item .b-title {
     margin-bottom: 0 !important;
   }
   .b-services-list .b-item .b-title span {
     text-transform: none !important;
+  }
+  .intro__content .btn {
+    color: #FFFF33 !important;
   }
 }
 @media (max-width: 768px) {
