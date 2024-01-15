@@ -2,8 +2,8 @@ class FaSearch {
   constructor() {
     this.headerSearch = document.querySelector('.b-header-search')
     this.searchInput = this.headerSearch.querySelector('.b-search')
-    this.sections = document.body.classList.contains('b-home-page') 
-      ? document.querySelectorAll('.b-home-content > div') 
+    this.sections = document.body.classList.contains('b-home-page')
+      ? document.querySelectorAll('.b-home-content > div')
       : document.querySelectorAll('.b-content .content')
     this.searchBar = document.querySelector('.search-bar')
     this.searchBarInput = this.searchBar.querySelector('input')
@@ -30,7 +30,6 @@ class FaSearch {
     this.currentPosition = 0
     this.searchTerm = event.target.value
     this.searchInput.value = this.searchBarInput.value = this.searchTerm
-    alert(this.searchTerm)
 
     if (this.searchTerm.length <= 3) {
       Array.from(this.sections).forEach((section) => {
@@ -41,24 +40,23 @@ class FaSearch {
 
     Array.from(this.sections).forEach((section) => {
       const sectionText = section.textContent.toLowerCase()
-      const containsTerm = sectionText.includes(this.searchTerm)
+      const containsTerm = sectionText.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1;
 
       if (containsTerm) {
         const matchingElement = this.findMatchingElement(section)
         if (matchingElement && !matchingElement.closest('.modal')) {
           matchingElement.setAttribute('data-fa-search', this.searchTerm)
           this.res.push(matchingElement)
-        }
+        } 
       } else {
         this.removeAllDataSearchAttributes(section)
       }
     })
 
     // this.displayResults()
-    if (this.res.length)
-      this.showResults()
+    if (this.res.length) this.showResults()
 
-      this.checkNav()
+    this.checkNav()
   }
 
   findMatchingElement(parent) {
@@ -66,7 +64,7 @@ class FaSearch {
       parent,
       NodeFilter.SHOW_TEXT,
       (node) => {
-        return node.nodeValue.toLowerCase().includes(this.searchTerm)
+        return node.nodeValue.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1
           ? NodeFilter.FILTER_ACCEPT
           : NodeFilter.FILTER_REJECT
       }
@@ -106,7 +104,7 @@ class FaSearch {
     this.searchInput.blur()
     setTimeout(() => {
       document.querySelector('.search-bar input').focus()
-    }, 10);
+    }, 10)
 
     this.searchBar.classList.add('active')
     this.headerSearch.classList.remove('active')
@@ -162,12 +160,12 @@ class FaSearch {
 
     if (this.currentPosition == this.res.length - 1) {
       this.searchBarNext.classList.add('disable')
-    } 
+    }
     if (this.currentPosition == 0) {
       this.searchBarPrev.classList.add('disable')
     }
   }
-  
+
   disableNav() {
     this.searchBarPrev.classList.add('disable')
     this.searchBarNext.classList.add('disable')
@@ -180,40 +178,42 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger')
   const searchBarInput = document.querySelector('.search-bar input')
   const searchBarClear = document.querySelectorAll('[data-fa-search-clear]')
-  const prevSearch = document.querySelector('.search-bar__nav--prev:not(.disable)')
-  const nextSearch = document.querySelector('.search-bar__nav--next:not(.disable)')
+  const prevSearch = document.querySelector(
+    '.search-bar__nav--prev:not(.disable)'
+  )
+  const nextSearch = document.querySelector(
+    '.search-bar__nav--next:not(.disable)'
+  )
   const mobileSearchIcon = document.querySelector('.mobile-search')
 
   const FSearch = new FaSearch()
   searchInput.addEventListener('input', FSearch.onInput)
   searchBarInput.addEventListener('input', FSearch.onInput)
   searchBarInput.addEventListener('keyup', function (e) {
-    if (e.code.toLowerCase() == 'enter')
-      FSearch.next()
+    if (e.code.toLowerCase() == 'enter') FSearch.next()
   })
-  prevSearch.addEventListener('click', function(e) {
+  prevSearch.addEventListener('click', function (e) {
     if (e.target.classList.contains('disable')) return
     FSearch.prev()
   })
-  nextSearch.addEventListener('click', function(e) {
+  nextSearch.addEventListener('click', function (e) {
     if (e.target.classList.contains('disable')) return
     FSearch.next()
   })
 
   if (window.innerWidth <= 992) {
-    mobileSearchIcon.addEventListener('click', function() {
+    mobileSearchIcon.addEventListener('click', function () {
       hamburger.click()
 
       searchBar.classList.add('active')
       FSearch.init()
       setTimeout(() => {
         searchBarInput.focus()
-      }, 10);
+      }, 10)
     })
-
   }
 
-  for(const closeIcon of searchBarClear) {
+  for (const closeIcon of searchBarClear) {
     closeIcon.addEventListener('click', FSearch.clearResults)
   }
 })

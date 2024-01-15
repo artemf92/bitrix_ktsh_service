@@ -1798,7 +1798,6 @@ img{
         padding: 0;
         height: 25px;
         font-size: 13px !important;
-        color: #000 !important;
     }
     #horizontal-multilevel-menu li ul{
         display: block;
@@ -1933,9 +1932,6 @@ img{
     .b-mobile-burger{
         position: absolute;
         top:10px;
-    }
-    .b-main-menu{
-        background-color: #fff !important;
     }
     #block-gallery{
         padding-bottom: 30px;

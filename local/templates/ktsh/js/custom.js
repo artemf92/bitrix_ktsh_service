@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  setTimeout(() => {
+    showAllImages()
+  }, 100);
   // if ($(window).width() <= 768) {
   //   $('.b-main-menu ul:not(.submenu) li a').on('click', function (event) {
   //     console.log($(this).siblings('ul.submenu').length)
@@ -119,4 +122,11 @@ function initObjectsPictures() {
       $(e).attr('src',$(e).data('src'))
     })
   }, 100);
+}
+
+function showAllImages() {
+  $('img[data-src]:not([src])').each((i,el) => {
+    const src = $(el).data('src')
+    $(el).attr('src',src)
+  })
 }
