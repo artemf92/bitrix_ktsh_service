@@ -1,0 +1,13 @@
+@media(min-width: 992px) {
+    .header .b-up .b-slogan,
+    .b-header-address, .b-header-phone a,
+    .b-header-socials ul li a,
+    .b-slider-title,
+    .b-slider-title span,
+    .b-slider-text{
+        color: #fff !important;
+    }
+    .header .b-up .b-slogan:before{
+        background-color: #fff !important;
+    }
+}
