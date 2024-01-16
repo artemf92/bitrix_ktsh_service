@@ -95,7 +95,7 @@
                         <? //<div class="footer-contacts__phone-text">Круглосуточный клиентский центр<br>Звонок бесплатный</div> 
                         ?>
                     </div>
-                    <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="###" class="btn b-btn b-btn-primary">Электронное обращение</button>
+                    <button data-toggle="modal" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary">Электронное обращение</button>
                 </div>
             </div>
         </section>
@@ -141,7 +141,7 @@ if ($fixedButtonShowMobile == 'Y') {
 ?>
 <?php if ($fixedButtonText) : ?>
     <div class="b-fixed-button <?= $showPCClass ?> <?= $showMobileClass ?> <?= $positionClass ?>">
-        <button data-form-title="<?= $fixedButtonText ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?= $fixedButtonText ?></button>
+        <button data-form-title="<?= $fixedButtonText ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary"><?= $fixedButtonText ?></button>
     </div>
 <?php endif; ?>
 

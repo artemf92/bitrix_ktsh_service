@@ -82,17 +82,17 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                     <ul class="b-catalog-subcategory">
                         <? foreach ($section['SUBSECTIONS'] as $subsection) { ?>
                             <li>
-                                <button class="btn b-btn b-btn-catalog" id="b-catalog-tab-" data-toggle="tab" data-target="#<?=$subsection['CODE']?>" type="button" role="tab" aria-selected="false">
+                                <button class="btn b-btn b-btn-catalog" id="b-catalog-tab-" data-toggle="tab" data-target="#<?= $subsection['CODE'] ?>" type="button" role="tab" aria-selected="false">
                                     <?= $subsection['NAME'] ?>
                                 </button>
                             </li>
                         <? } ?>
                         <? if (empty($section['SUBSECTIONS']) && $section['DEPTH_LEVEL'] > 1) { ?>
-                        <li>
-                            <button class="btn b-btn b-btn-catalog" id="b-catalog-tab-<?=$key?>" data-toggle="tab" data-target="#<?=$subsection['PARENT_CODE']?>" type="button" role="tab" aria-selected="false">
-                                ← Назад
-                            </button>
-                        </li>
+                            <li>
+                                <button class="btn b-btn b-btn-catalog" id="b-catalog-tab-<?= $key ?>" data-toggle="tab" data-target="#<?= $subsection['PARENT_CODE'] ?>" type="button" role="tab" aria-selected="false">
+                                    ← Назад
+                                </button>
+                            </li>
                         <? } ?>
                     </ul>
                     <?php $products = GedestudioContent::getProductsList($arParams['IBLOCK_ID'], $section['ID']); ?>
@@ -115,14 +115,14 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                                     <div class="<?= $classMob ?> <?= $classPC ?> col-md-4 b-item <?= $itemClass ?>">
                                         <div class="b-item-inner">
                                             <div class="b-img">
-                                                <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>">
+                                                <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax">
                                                     <img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $product['NAME'] ?>">
                                                 </span>
                                             </div>
                                             <div class="b-item-content-wrap">
                                                 <div class="b-item-content">
                                                     <div class="b-title">
-                                                        <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>"><?= $product['NAME'] ?></span>
+                                                        <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax"><?= $product['NAME'] ?></span>
                                                     </div>
                                                     <div class="b-text">
                                                         <?php if ($product['PREVIEW_TEXT']) : ?>
@@ -135,7 +135,7 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                                                 </div>
                                                 <div class="b-list-buttons">
                                                     <?php if ($buttonName) : ?>
-                                                        <button data-toggle="modal" data-form-title="" data-target="#b-catalog-form" class="btn b-btn b-btn-catalog b-btn-secondary"><?= $buttonName ?></button>
+                                                        <button data-toggle="modal" data-form-title="" data-target="#b-catalog-form" class="btn btn-ajax b-btn b-btn-catalog b-btn-secondary"><?= $buttonName ?></button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                                 <div class="b-catalog-modal-preview-text"></div>
                                 <div class="b-catalog-modal-product-price"><span></span></div>
                                 <?php if ($buttonName) : ?>
-                                    <button id="catalog-modal-button" data-toggle="modal" data-form-title="" data-target="#b-catalog-form" class="btn b-btn b-btn-catalog b-btn-primary"><?= $buttonName ?></button>
+                                    <button id="catalog-modal-button" data-toggle="modal" data-form-title="" data-target="#b-catalog-form" class="btn btn-ajax b-btn b-btn-catalog b-btn-primary"><?= $buttonName ?></button>
                                 <?php endif; ?>
                                 <div class="b-catalog-modal-detail-text"></div>
                             </div>

@@ -159,7 +159,7 @@ switch ($countMOB) {
 
                                 <?/*php if ($arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE']) : ?>
                                     <div class="b-detail">
-                                        <button data-form-title="<?= $arItem['NAME'] ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <button data-form-title="<?= $arItem['NAME'] ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     </div>
                                 <?php endif; */ ?>
                             </div>
