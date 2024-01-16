@@ -14,7 +14,7 @@
       <div class="b-news-inner">
         <div class="b-news-elements">
           <?php foreach ($arrResult as $result) : ?>
-            <div class="b-btn-secondary b-news-element p-4">
+            <div class="b-news-element p-4">
               <div class="b-image mb-3">
                 <? $image = CFile::ResizeImageGet($result['PROPERTY_IMAGE_VALUE'], ['width' => 300, 'height' => 400]); ?>
                 <? if ($image) { ?>

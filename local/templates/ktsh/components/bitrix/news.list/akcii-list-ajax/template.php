@@ -126,7 +126,7 @@ switch ($countMOB) {
                                     <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
                                         <button data-toggle="modal" data-target="#b-service-detail-modal-<?= $arItem['ID'] ?>" class="btn b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     <?php } else { ?>
-                                        <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="<?= $arItem['NAME']; ?>" class="btn b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="<?= $arItem['NAME']; ?>" class="btn btn-ajax btn-ajax b-btn btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     <?php } ?>
                                 <?php } ?>
                             </div>
@@ -162,7 +162,7 @@ switch ($countMOB) {
 
                                 <?/*php if ($arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE']) : ?>
                                     <div class="b-detail">
-                                        <button data-form-title="<?= $arItem['NAME'] ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
+                                        <button data-form-title="<?= $arItem['NAME'] ?>" data-toggle="modal" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary"><?= $arItem['PROPERTIES']['BUTTON_TEXT']['~VALUE'] ?></button>
                                     </div>
                                 <?php endif; */ ?>
                             </div>

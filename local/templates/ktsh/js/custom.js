@@ -75,7 +75,7 @@ $(document).on('click', '.mobile-search', function () {
   $('.b-mobile-search').toggleClass('active')
 })
 
-$(document).on('click', '[data-toggle="modal"]', function(e) {
+$(document).on('click', '.btn-ajax[data-toggle="modal"]', function(e) {
   const modal = $(this).data('target').substr(1)
   const formTitle = $(this).data("form-title");
   const formSubtitle = $(this).data("form-subtitle");
