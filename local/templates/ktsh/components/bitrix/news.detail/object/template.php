@@ -14,7 +14,15 @@ $this->setFrameMode(true);
 ?>
 <div class="objects__detail">
 	<div class="objects__content-tab" id="tab1">
+		<? if ($arResult['PROPERTIES']['LINK_GIS']['VALUE_XML_ID'] == 'Y') { ?>
+			<br>
+			<p>Информацией по Вашему МКД размещена в Государственной информационной системе жилищно-коммунального хозяйства (ГИС ЖКХ) и доступна для Вас - https://dom.gosuslugi.ru/#!/houses</p>
+			<?/*<div class="mt-2">
+				<a href="https://dom.gosuslugi.ru/#!/houses" rel="nofollow" target="_blank" class="b-btn b-btn-primary">Общая информация</a>
+			</div>*/ ?>
+		<? } ?>
 		<? if ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE']) { ?>
+			<p>По вопросам эксплуатации и обслуживания здания и оборудования Вашего МКД — контактное лицо управляющей компании КТСХ - Сервис</p>
 			<div id="contact" class="contact-block section-tabs section-menu">
 				<div class="contact-container">
 					<? foreach ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE'] as $key => $item) { ?>
@@ -35,11 +43,6 @@ $this->setFrameMode(true);
 			</div>
 		<? } ?>
 		<?= $arResult['DETAIL_TEXT'] ?>
-		<? if ($arResult['PROPERTIES']['LINK_GIS']['VALUE_XML_ID'] == 'Y') { ?>
-			<div class="mt-2">
-				<a href="https://dom.gosuslugi.ru/#!/houses" rel="nofollow" target="_blank" class="b-btn b-btn-primary">Общая информация</a>
-			</div>
-		<? } ?>
 	</div>
 	<div class="objects__content-tab" id="tab2">
 		<div class="h3 tab-title">Провайдеры</div>
