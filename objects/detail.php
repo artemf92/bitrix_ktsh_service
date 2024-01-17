@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Объекты");
   <div class="site-content with-sidebar">
     <div class="sidebar">
       <ul class="objects__tabs">
-        <li class="objects__tab"><a href="https://dom.gosuslugi.ru/#!/houses" target="_blank" rel="nofollow">Общая информация</a></li>
+        <li class="objects__tab"><a href="#tab1">Общая информация</a></li>
         <li class="objects__tab"><a href="#tab2">Провайдеры</a></li>
         <li class="objects__tab"><a href="#tab3">Документы</a></li>
         <li class="objects__tab"><a href="#tab4">Отчеты для жителей</a></li>

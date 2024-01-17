@@ -14,19 +14,32 @@ $this->setFrameMode(true);
 ?>
 <div class="objects__detail">
 	<div class="objects__content-tab" id="tab1">
-		<div id="contact" class="contact-block section-tabs section-menu">
-			<div class="contact-container">
-				<div class="contact-holder">
-					<h2>Генеральный директор</h2>
-
-					<h3>Lorem, ipsum dolor.</h3>
-					<div class="mail">asdsd_asdq@email.com</div>
-
+		<? if ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE']) { ?>
+			<div id="contact" class="contact-block section-tabs section-menu">
+				<div class="contact-container">
+					<? foreach ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE'] as $key => $item) { ?>
+						<div class="contact-holder">
+							<h2><?= $item['SUB_VALUES']['HOUSEMANAGER_POST']['VALUE'] ?></h2>
+							<? if ($item['SUB_VALUES']['HOUSEMANAGER_DESC']['VALUE']) { ?>
+								<h3><?= $item['SUB_VALUES']['HOUSEMANAGER_DESC']['VALUE'] ?></h3>
+							<? } ?>
+							<? if ($item['SUB_VALUES']['HOUSEMANAGER_PHONE']['VALUE']) { ?>
+								<div class="phone"><a href="tel:<?= $item['SUB_VALUES']['HOUSEMANAGER_PHONE']['VALUE'] ?>"><?= $item['SUB_VALUES']['HOUSEMANAGER_PHONE']['VALUE'] ?></a></div>
+							<? } ?>
+							<? if ($item['SUB_VALUES']['HOUSEMANAGER_EMAIL']['VALUE']) { ?>
+								<div class="mail"><a href="mailto:<?= $item['SUB_VALUES']['HOUSEMANAGER_EMAIL']['VALUE'] ?>"><?= $item['SUB_VALUES']['HOUSEMANAGER_EMAIL']['VALUE'] ?></a></div>
+							<? } ?>
+						</div>
+					<? } ?>
 				</div>
-
 			</div>
-		</div>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum impedit illum aliquam suscipit recusandae nisi iure. Harum placeat quaerat, illo fugit explicabo quam sapiente eaque praesentium iste animi nam velit maxime magnam nihil qui corrupti iure enim minus eveniet nesciunt. Reiciendis, sed velit maiores non vel necessitatibus atque sint quia pariatur obcaecati quo quibusdam itaque alias unde delectus eaque voluptatum nulla, nesciunt exercitationem perspiciatis reprehenderit? Asperiores illo voluptatum minus laborum dolore possimus necessitatibus soluta excepturi placeat, atque nostrum illum dolorem, vero explicabo cumque nam qui quos nobis esse quae dolores? Laborum repellat consequuntur porro optio veritatis nobis non voluptate explicabo.
+		<? } ?>
+		<?= $arResult['DETAIL_TEXT'] ?>
+		<? if ($arResult['PROPERTIES']['LINK_GIS']['VALUE_XML_ID'] == 'Y') { ?>
+			<div class="mt-2">
+				<a href="https://dom.gosuslugi.ru/#!/houses" rel="nofollow" target="_blank" class="b-btn b-btn-primary">Общая информация</a>
+			</div>
+		<? } ?>
 	</div>
 	<div class="objects__content-tab" id="tab2">
 		<div class="h3 tab-title">Провайдеры</div>
@@ -46,28 +59,28 @@ $this->setFrameMode(true);
 <div class="news-detail">
 	<?
 	if (array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y") {
-?>
-	<div class="news-detail-share">
-		<noindex>
-			<?
-			$APPLICATION->IncludeComponent(
-				"bitrix:main.share",
-				"",
-				array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-		</noindex>
-	</div>
-<?
+	?>
+		<div class="news-detail-share">
+			<noindex>
+				<?
+				$APPLICATION->IncludeComponent(
+					"bitrix:main.share",
+					"",
+					array(
+						"HANDLERS" => $arParams["SHARE_HANDLERS"],
+						"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
+						"PAGE_TITLE" => $arResult["~NAME"],
+						"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
+						"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
+						"HIDE" => $arParams["SHARE_HIDE"],
+					),
+					$component,
+					array("HIDE_ICONS" => "Y")
+				);
+				?>
+			</noindex>
+		</div>
+	<?
 	}
-?>
+	?>
 </div>
