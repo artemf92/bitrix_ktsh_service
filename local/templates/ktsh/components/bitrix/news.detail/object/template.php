@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 	<div class="objects__content-tab" id="tab1">
 		<? if ($arResult['PROPERTIES']['LINK_GIS']['VALUE_XML_ID'] == 'Y') { ?>
 			<br>
-			<p>Информацией по Вашему МКД размещена в Государственной информационной системе жилищно-коммунального хозяйства (ГИС ЖКХ) и доступна для Вас - https://dom.gosuslugi.ru/#!/houses</p>
+			<p>Информация по Вашему МКД размещена в Государственной информационной системе жилищно-коммунального хозяйства (ГИС ЖКХ) и доступна для Вас - <a href="https://dom.gosuslugi.ru/#!/houses" rel="nofollow" target="_blank">https://dom.gosuslugi.ru/#!/houses</a></p>
 			<?/*<div class="mt-2">
 				<a href="https://dom.gosuslugi.ru/#!/houses" rel="nofollow" target="_blank" class="b-btn b-btn-primary">Общая информация</a>
 			</div>*/ ?>
