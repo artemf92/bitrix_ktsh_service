@@ -158,7 +158,8 @@ $(document).ready(function(){
         const formTitle = e.relatedTarget.getAttribute("data-form-title");
         const formSubtitle = e.relatedTarget.getAttribute("data-form-subtitle");
         $(parentModal).modal('hide');
-        document.querySelector('#b-zapis-form .b-zapis-form-title').innerText = formTitle;
+        if (formTitle)
+            document.querySelector('#b-zapis-form .b-zapis-form-title').innerText = formTitle;
         // document.querySelector('#b-zapis-form input[name="formName"]').value = formTitle;
         if (formSubtitle) {
             document.querySelector('#b-zapis-form .b-zapis-form-subtitle').innerText = formSubtitle;
@@ -166,9 +167,16 @@ $(document).ready(function(){
     })
     $('#b-catalog-form').on('show.bs.modal', function (e) {
         $('#b-catalog-detail-modal').modal('hide');
-        const formTitle = e.relatedTarget.getAttribute("data-form-title");
-        document.querySelector('#b-catalog-form .b-zapis-form-title').innerText = formTitle;
-        // document.querySelector('#b-catalog-form input[name="formName"]').value = formTitle;
+        const product = e.relatedTarget.getAttribute("data-product");
+        const modal = e.currentTarget
+        const inputs = modal.querySelectorAll('input[type="string"]')
+
+        for(let i of inputs) {
+            if (i.value == '%my_param1% ') {
+                i.value = product
+                i.disabled = true
+            }
+        }
     })
 
     let slideUp = (target, duration) => {

@@ -145,6 +145,29 @@ if ($fixedButtonShowMobile == 'Y') {
     </div>
 <?php endif; ?>
 
+<? $APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    array(
+        "AREA_FILE_SHOW"    => "file",
+        "AREA_FILE_SUFFIX"  => "inc",
+        "EDIT_TEMPLATE"     => "",
+        "PATH"              => "/include/modals/b-catalog-form.php"
+    )
+);
+?>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    array(
+        "AREA_FILE_SHOW"    => "file",
+        "AREA_FILE_SUFFIX"  => "inc",
+        "EDIT_TEMPLATE"     => "",
+        "PATH"              => "/include/modals/b-zapis-form.php"
+    )
+);
+?>
+
 <div class="modal b-modal fade" id="success-modal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">

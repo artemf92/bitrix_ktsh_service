@@ -590,10 +590,18 @@ a.b-btn {
 .b-other-page .b-header-search input {
 	color: #000;
 }
+#block-about .b-text {
+  overflow: scroll;
+}
 #block-about table {
   width: 100%;
   margin-bottom: 20px;
-  overflow-x: scroll;
+  min-width: 450px;
+}
+.b-faq-list .b-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
 }
 @media (max-width: 1300px) {
   .header .b-up .b-right {
@@ -815,6 +823,16 @@ a.b-btn {
   }
   .footer-contacts .b-btn {
     padding: 0 10px !important;
+  }
+  .b-faq-list .b-title {
+    font-size: 17px;
+  }
+  .modal-body {
+    padding: 25px 1rem 25px !important;
+
+  }
+  #block-about h2 {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 375px) {
