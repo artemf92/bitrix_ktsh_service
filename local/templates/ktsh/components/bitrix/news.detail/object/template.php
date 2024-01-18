@@ -23,7 +23,7 @@ $this->setFrameMode(true);
 		<? } ?>
 		<? if ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE']) { ?>
 			<p>По вопросам эксплуатации и обслуживания здания и оборудования Вашего МКД — контактное лицо управляющей компании КТСХ - Сервис</p>
-			<div id="contact" class="contact-block section-tabs section-menu">
+			<div id="contact" class="contact-block section-tabs section-menu mt-4">
 				<div class="contact-container">
 					<? foreach ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE'] as $key => $item) { ?>
 						<div class="contact-holder">
