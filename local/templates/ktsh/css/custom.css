@@ -595,6 +595,11 @@ a.b-btn {
   margin-bottom: 20px;
   overflow-x: scroll;
 }
+.b-faq-list .b-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
 @media (max-width: 1300px) {
   .header .b-up .b-right {
     flex: 0 1 42% !important;
@@ -815,6 +820,13 @@ a.b-btn {
   }
   .footer-contacts .b-btn {
     padding: 0 10px !important;
+  }
+  .b-faq-list .b-title {
+    font-size: 17px;
+  }
+  .modal-body {
+    padding: 25px 1rem 25px !important;
+
   }
 }
 @media (max-width: 375px) {

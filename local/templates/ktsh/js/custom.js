@@ -75,46 +75,50 @@ $(document).on('click', '.mobile-search', function () {
   $('.b-mobile-search').toggleClass('active')
 })
 
-$(document).on('click', '.btn-ajax[data-toggle="modal"]', function(e) {
-  const modal = $(this).data('target').substr(1)
-  const formTitle = $(this).data("form-title");
-  const formSubtitle = $(this).data("form-subtitle");
-  const param = $(this).data('form-param')
+// $(document).on('click', '.btn-ajax[data-toggle="modal"]', function(e) {
+//   const modal = $(this).data('target').substr(1)
+//   const formTitle = $(this).data("form-title");
+//   const formSubtitle = $(this).data("form-subtitle");
+//   const param = $(this).data('form-param')
+//   const product = $(this).data('product')
 
-  $.fancybox.open({
-    type: 'ajax',
-    src: '/include/modals/' + modal + '.php',
-    opts: {
-      maxWidth: 420,
-      helpers: {
-        overlay: {
-          opacity: 0
-        }
-      },
-      beforeLoad: function (instance, current) {
-        window.addEventListener('b24:form:show', (event) => {
-          let form = event.detail.object
-          switch (form.identification.id) {
-            case 64:
-              form.setProperty('service', formTitle)
-              break;
-            case 62:
-              form.setProperty('target', param)
-              break;
-            default:
-              break;
-          }
-        })
-      },
-      afterLoad: function (instance, current) {
-        if (formTitle)
-          $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
-        if (formSubtitle)
-          $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
-      }
-    },
-  })
-})
+//   $.fancybox.open({
+//     type: 'inline',
+//     src: modal,
+//     opts: {
+//       maxWidth: 420,
+//       helpers: {
+//         overlay: {
+//           opacity: 0
+//         }
+//       },
+//       beforeLoad: function (instance, current) {
+//         window.addEventListener('b24:form:show', (event) => {
+//           let form = event.detail.object
+//           switch (form.identification.id) {
+//             case 64:
+//               form.setProperty('service', formTitle)
+//               break;
+//             case 62:
+//               form.setProperty('target', param)
+//               break;
+//             default:
+//               break;
+//           }
+//         })
+//       },
+//       afterLoad: function (instance, current) {
+//         if (formTitle)
+//           $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
+//         if (formSubtitle)
+//           $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
+//         if (product) {
+//           document.ORDER_PRODUCT = product.trim()
+//         }
+//       }
+//     },
+//   })
+// })
 
 function initObjectsPictures() {
   setTimeout(() => {
