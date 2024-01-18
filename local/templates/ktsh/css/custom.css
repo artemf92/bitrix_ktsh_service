@@ -590,10 +590,13 @@ a.b-btn {
 .b-other-page .b-header-search input {
 	color: #000;
 }
+#block-about .b-text {
+  overflow: scroll;
+}
 #block-about table {
   width: 100%;
   margin-bottom: 20px;
-  overflow-x: scroll;
+  min-width: 450px;
 }
 .b-faq-list .b-title {
   text-transform: uppercase;
@@ -827,6 +830,9 @@ a.b-btn {
   .modal-body {
     padding: 25px 1rem 25px !important;
 
+  }
+  #block-about h2 {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 375px) {
