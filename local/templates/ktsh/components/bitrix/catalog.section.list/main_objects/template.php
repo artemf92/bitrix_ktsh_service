@@ -56,6 +56,17 @@ switch ($countMOB) {
 $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
+
+$arObjects = [];
+foreach ($arResult['SECTIONS'] as $key => &$arSection) {
+	$arObjects[$arSection['ID']] = $arSection;
+	$arSelect = array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_LOCATION", "PROPERTY_CITY");
+	$arFilter = array("IBLOCK_ID" => 14, "SECTION_ID" => $arSection['ID']);
+	$res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
+	while ($ob = $res->GetNextElement()) {
+		$arObjects[$arSection['ID']]['ITEMS'][] = $ob->GetFields();
+	}
+}
 ?>
 <div class="b-services-list">
 	<? if ($arParams["DISPLAY_TOP_PAGER"]) : ?>
@@ -88,9 +99,9 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 				<div class="b-item-inner" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
 					<div class="b-img">
 						<? if ($image) { ?>
-						<span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arSection['ID'] ?>">
-							<img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $arSection['NAME'] ?>" />
-						</span>
+							<span <?php if ($isDetail) : ?>data-toggle="modal" <?php endif; ?> data-target="#b-service-detail-modal-<?= $arSection['ID'] ?>">
+								<img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $arSection['NAME'] ?>" />
+							</span>
 						<? } ?>
 					</div>
 					<div class="b-item-content-wrap">
@@ -107,10 +118,16 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 								<div class="b-price"><?= $arSection['PROPERTIES']['PRICE']['~VALUE'] ?></div>
 							<?php endif; ?>
 						</div>
+						<ul class="list-group list-unstyled">
+							<? foreach ($arObjects[$arSection['ID']]['ITEMS'] as $key => $object) { ?>
+								<li class="mb-4">
+										<p class="mb-1"><strong><?= $object['NAME'] ?></strong></p>
+										<a href="<?= $object['DETAIL_PAGE_URL'] ?>">Смотреть подробнее</a>
+								</li>
+							<? } ?>
+						</ul>
 						<div class="b-list-buttons">
-							<a href="/objects/?id=<?=$arSection['ID']?>">
-								<button class="btn b-btn b-btn-primary">Подробнее</button>
-							</a>
+							<a href="/objects/?id=<?= $arSection['ID'] ?>" class="btn b-btn b-btn-primary">На карте</a>
 						</div>
 					</div>
 				</div>
