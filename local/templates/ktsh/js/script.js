@@ -165,19 +165,29 @@ $(document).ready(function(){
             document.querySelector('#b-zapis-form .b-zapis-form-subtitle').innerText = formSubtitle;
         }
     })
-    $('#b-catalog-form').on('show.bs.modal', function (e) {
-        $('#b-catalog-detail-modal').modal('hide');
-        const product = e.relatedTarget.getAttribute("data-product");
-        const modal = e.currentTarget
-        const inputs = modal.querySelectorAll('input[type="string"]')
-
-        for(let i of inputs) {
-            if (i.value == '%my_param1% ') {
-                i.value = product
-                i.disabled = true
-            }
-        }
-    })
+    // $('#b-catalog-form').on('show.bs.modal', function (e) {
+    //     $('#b-catalog-detail-modal').modal('hide');
+    //     const product = e.relatedTarget.getAttribute("data-product");
+    //     const modal = e.currentTarget
+        
+    //     window.addEventListener('b24:form:show', (event) => {
+    //         console.log('show')
+    //         let form = event.detail.object
+    //         if (form.identification.id == 64) {
+    //             form.setProperty('product', product)
+    //             setTimeout(() => {
+    //                 const inputs = modal.querySelectorAll('input[type="string"]')
+    //                 console.log(product)
+    //                 for(let i of inputs) {
+    //                     if (i.value == '%my_param1% ') {
+    //                         i.value = product
+    //                         i.disabled = true
+    //                     }
+    //                 }
+    //             }, 100);
+    //         }
+    //     })
+    // })
 
     let slideUp = (target, duration) => {
         window.setTimeout( () => {
