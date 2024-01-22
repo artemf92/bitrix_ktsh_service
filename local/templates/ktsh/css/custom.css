@@ -603,6 +603,12 @@ a.b-btn {
   font-weight: bold;
   font-size: 20px;
 }
+.fancybox-slide .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 3rem;
+}
 @media (max-width: 1300px) {
   .header .b-up .b-right {
     flex: 0 1 42% !important;

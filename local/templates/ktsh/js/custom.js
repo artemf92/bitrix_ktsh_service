@@ -75,50 +75,25 @@ $(document).on('click', '.mobile-search', function () {
   $('.b-mobile-search').toggleClass('active')
 })
 
-// $(document).on('click', '.btn-ajax[data-toggle="modal"]', function(e) {
-//   const modal = $(this).data('target').substr(1)
-//   const formTitle = $(this).data("form-title");
-//   const formSubtitle = $(this).data("form-subtitle");
-//   const param = $(this).data('form-param')
-//   const product = $(this).data('product')
+$(document).on('click', '.b-btn-catalog', function(e) {
+  const product = e.currentTarget.getAttribute('data-product')
+  window.bCatalogselectedProduct = product
 
-//   $.fancybox.open({
-//     type: 'inline',
-//     src: modal,
-//     opts: {
-//       maxWidth: 420,
-//       helpers: {
-//         overlay: {
-//           opacity: 0
-//         }
-//       },
-//       beforeLoad: function (instance, current) {
-//         window.addEventListener('b24:form:show', (event) => {
-//           let form = event.detail.object
-//           switch (form.identification.id) {
-//             case 64:
-//               form.setProperty('service', formTitle)
-//               break;
-//             case 62:
-//               form.setProperty('target', param)
-//               break;
-//             default:
-//               break;
-//           }
-//         })
-//       },
-//       afterLoad: function (instance, current) {
-//         if (formTitle)
-//           $(current.$content[0]).find('.b-zapis-form-title').text(formTitle)
-//         if (formSubtitle)
-//           $(current.$content[0]).find('.b-zapis-form-subtitle').text(formSubtitle)
-//         if (product) {
-//           document.ORDER_PRODUCT = product.trim()
-//         }
-//       }
-//     },
-//   })
-// })
+  $.fancybox.open({
+    type: 'ajax',
+    src: '/include/modals/b-catalog-form.php',
+    opts: {
+      closeTpl:
+        '<button data-fancybox-close type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>',
+      afterLoad: function (instance, current) {
+        window.addEventListener('b24:form:show', catalogFormHandler)
+      },
+      beforeClose: function () {
+        window.removeEventListener('b24:form:show', catalogFormHandler)
+      }
+    }
+  })
+})
 
 function initObjectsPictures() {
   setTimeout(() => {
@@ -133,4 +108,23 @@ function showAllImages() {
     const src = $(el).data('src')
     $(el).attr('src',src)
   })
+}
+
+function catalogFormHandler(event) {
+  const instance = $.fancybox.getInstance()
+  const modal = instance.current.$content[0]
+  const product = window.bCatalogselectedProduct
+  let form = event.detail.object
+  if (form.identification.id == 64) {
+    form.setProperty('product', product)
+    setTimeout(() => {
+      const inputs = modal.querySelectorAll('input[type="string"]')
+      for (let i of inputs) {
+        if (i.value == '%my_param1% ') {
+          i.value = product
+          i.disabled = true
+        }
+      }
+    }, 100)
+  }
 }
