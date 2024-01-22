@@ -152,17 +152,6 @@ if ($fixedButtonShowMobile == 'Y') {
         "AREA_FILE_SHOW"    => "file",
         "AREA_FILE_SUFFIX"  => "inc",
         "EDIT_TEMPLATE"     => "",
-        "PATH"              => "/include/modals/b-catalog-form.php"
-    )
-);
-?>
-<? $APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    array(
-        "AREA_FILE_SHOW"    => "file",
-        "AREA_FILE_SUFFIX"  => "inc",
-        "EDIT_TEMPLATE"     => "",
         "PATH"              => "/include/modals/b-zapis-form.php"
     )
 );
