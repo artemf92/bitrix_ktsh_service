@@ -75,7 +75,7 @@ $(document).on('click', '.mobile-search', function () {
   $('.b-mobile-search').toggleClass('active')
 })
 
-$(document).on('click', '.b-btn-catalog', function(e) {
+$(document).on('click', '.b-btn-catalog:not([data-toggle="tab"])', function(e) {
   const product = e.currentTarget.getAttribute('data-product')
   window.bCatalogselectedProduct = product
 
