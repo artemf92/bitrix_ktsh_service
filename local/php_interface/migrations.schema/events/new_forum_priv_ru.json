@@ -1,0 +1,61 @@
+{
+    "event": "NEW_FORUM_PRIV",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Приватное письмо посетителю форума",
+        "DESCRIPTION": [
+            "",
+            "\t\t\t#FROM_NAME# - Автор сообщения",
+            "\t\t\t#FROM_EMAIL# - E-Mail автора сообщения",
+            "\t\t\t#TO_NAME# - Имя получателя сообщения",
+            "\t\t\t#TO_EMAIL# - E-Mail получателя сообщения",
+            "\t\t\t#SUBJECT# - Тема сообщения",
+            "\t\t\t#MESSAGE# - Тело сообщения",
+            "\t\t\t#MESSAGE_DATE# - Дата сообщения"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#FROM_EMAIL#",
+            "EMAIL_TO": "#TO_EMAIL#",
+            "SUBJECT": "#SITE_NAME#: [private] #SUBJECT#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#",
+                "------------------------------------------",
+                "",
+                "Вы получили персональное сообщение с форума на сайте #SERVER_NAME#.",
+                "",
+                "Тема: #SUBJECT#",
+                "",
+                "Автор: #FROM_NAME# #FROM_EMAIL#",
+                "Дата : #MESSAGE_DATE#",
+                "Сообщение:",
+                "",
+                "#MESSAGE#",
+                "",
+                "Сообщение сгенерировано автоматически.",
+                ""
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ NEW_FORUM_PRIV ] Приватное письмо посетителю форума"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "vote",
+            "NAME": "VOTE_COMPATIBLE_OLD_TEMPLATE",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "vote",
+            "NAME": "VOTE_DIR",
+            "VALUE": ""
+        }
+    ]
+}

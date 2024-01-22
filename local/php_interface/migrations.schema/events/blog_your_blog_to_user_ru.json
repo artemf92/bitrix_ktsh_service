@@ -1,0 +1,59 @@
+{
+    "event": "BLOG_YOUR_BLOG_TO_USER",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Ваш блог был добавлен в друзья",
+        "DESCRIPTION": [
+            "#BLOG_ID# - ID блога ",
+            "#BLOG_NAME# - Название блога",
+            "#BLOG_URL# - Название блога латиницей",
+            "#BLOG_ADR# - Адрес блога",
+            "#USER_ID# - ID пользователя",
+            "#USER# - Пользователь",
+            "#USER_URL# - Адрес пользователя",
+            "#EMAIL_FROM# - Email отправителя письма",
+            "#EMAIL_TO# - Email получателя письма",
+            ""
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: [B] Ваш блог \"#BLOG_NAME#\" был добавлен в друзья к #USER#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#",
+                "------------------------------------------",
+                "",
+                "Ваш блог \"#BLOG_NAME#\" был добавлен в друзья к #USER#.",
+                "",
+                "Профиль пользователя: #USER_URL#",
+                "",
+                "Адрес вашего блога: #BLOG_ADR#",
+                "",
+                "Сообщение сгенерировано автоматически.",
+                ""
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ BLOG_YOUR_BLOG_TO_USER ] Ваш блог был добавлен в друзья"
+        }
+    ]
+}

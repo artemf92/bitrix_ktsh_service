@@ -1,0 +1,66 @@
+{
+    "event": "NEW_DEVICE_LOGIN",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Вход с нового устройства",
+        "DESCRIPTION": [
+            "#USER_ID# - ID пользователя",
+            "#EMAIL# - Email пользователя",
+            "#LOGIN# - Логин пользователя",
+            "#NAME# - Имя пользователя",
+            "#LAST_NAME# - Фамилия пользователя",
+            "#DEVICE# - Устройство",
+            "#BROWSER# - Браузер",
+            "#PLATFORM# - Платформа",
+            "#USER_AGENT# - User agent",
+            "#IP# - IP-адрес",
+            "#DATE# - Дата",
+            "#COUNTRY# - Страна",
+            "#REGION# - Регион",
+            "#CITY# - Город",
+            "#LOCATION# - Объединенные город, регион, страна",
+            ""
+        ],
+        "SORT": "11"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "Вход с нового устройства",
+            "MESSAGE": [
+                "Здравствуйте, #NAME#,",
+                "",
+                "Новое устройство авторизовалось под вашим логином #LOGIN#.",
+                " ",
+                "Устройство: #DEVICE# ",
+                "Браузер: #BROWSER#",
+                "Платформа: #PLATFORM#",
+                "Местоположение: #LOCATION# (может быть неточным)",
+                "Дата: #DATE#",
+                "",
+                "Если вы не знаете, кто это был, рекомендуем немедленно сменить пароль.",
+                ""
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": "ru",
+            "EVENT_TYPE": "[ NEW_DEVICE_LOGIN ] Вход с нового устройства"
+        }
+    ]
+}

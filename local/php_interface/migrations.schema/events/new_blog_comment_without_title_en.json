@@ -1,0 +1,63 @@
+{
+    "event": "NEW_BLOG_COMMENT_WITHOUT_TITLE",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "New comment in blog (without subject)",
+        "DESCRIPTION": [
+            "#BLOG_ID# - Blog ID",
+            "#BLOG_NAME# - Blog title",
+            "#BLOG_URL# - Blog url",
+            "#MESSAGE_TITLE# - Message title",
+            "#COMMENT_TEXT# - Comment text",
+            "#COMMENT_DATE# - Comment date",
+            "#COMMENT_PATH# - Comment URL",
+            "#AUTHOR# - Comment author",
+            "#EMAIL_FROM# - Sender email",
+            "#EMAIL_TO# - Recipient email"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: [B] #MESSAGE_TITLE#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#",
+                "------------------------------------------",
+                "",
+                "Новый комментарий в блоге \"#BLOG_NAME#\" на сообщение \"#MESSAGE_TITLE#\"",
+                "",
+                "Автор: #AUTHOR#",
+                "Дата: #COMMENT_DATE#",
+                "",
+                "Текст сообщения:",
+                "#COMMENT_TEXT#",
+                "",
+                "Адрес сообщения:",
+                "#COMMENT_PATH#",
+                "",
+                "Сообщение сгенерировано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ NEW_BLOG_COMMENT_WITHOUT_TITLE ] Новый комментарий в блоге (без темы)"
+        }
+    ]
+}

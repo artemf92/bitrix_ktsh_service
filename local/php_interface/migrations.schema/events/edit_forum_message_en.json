@@ -1,0 +1,71 @@
+{
+    "event": "EDIT_FORUM_MESSAGE",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Changing forum message",
+        "DESCRIPTION": [
+            "",
+            "\t\t\t#FORUM_ID# - Forum ID",
+            "\t\t\t#FORUM_NAME# - Forum name",
+            "\t\t\t#TOPIC_ID# - Topic ID",
+            "\t\t\t#MESSAGE_ID# - Message ID",
+            "\t\t\t#TOPIC_TITLE# - Topic title",
+            "\t\t\t#MESSAGE_TEXT# - Message text",
+            "\t\t\t#MESSAGE_DATE# - Message date",
+            "\t\t\t#AUTHOR# - Message author",
+            "\t\t\t#RECIPIENT# - E-Mail recipient",
+            "\t\t\t#TAPPROVED# - Message topic is approved",
+            "\t\t\t#MAPPROVED# - Message is approved",
+            "\t\t\t#PATH2FORUM# - Message Url",
+            "\t\t\t#FROM_EMAIL# - E-Mail for From field of the EMail"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#FROM_EMAIL#",
+            "EMAIL_TO": "#RECIPIENT#",
+            "SUBJECT": "#SITE_NAME#: [F] #TOPIC_TITLE# : #FORUM_NAME#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#",
+                "------------------------------------------",
+                "",
+                "Изменение сообщения на форуме #SERVER_NAME#.",
+                "",
+                "Тема:",
+                "#TOPIC_TITLE#",
+                "",
+                "Автор: #AUTHOR#",
+                "Дата : #MESSAGE_DATE#",
+                "Текст сообщения:",
+                "",
+                "#MESSAGE_TEXT#",
+                "",
+                "Адрес сообщения:",
+                "http:\/\/#SERVER_NAME##PATH2FORUM#",
+                "",
+                "Сообщение сгенерировано автоматически.",
+                ""
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ EDIT_FORUM_MESSAGE ] Изменение сообщения на форуме"
+        }
+    ]
+}

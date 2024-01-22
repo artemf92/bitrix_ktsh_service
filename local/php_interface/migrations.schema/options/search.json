@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "search",
+            "NAME": "dbnode_id",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "dbnode_status",
+            "VALUE": "ok"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "suggest_save_days",
+            "VALUE": "250"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_social_rating",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_tf_cache",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_word_distance",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "version",
+            "VALUE": "v2.0"
+        }
+    ]
+}

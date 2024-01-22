@@ -1,0 +1,230 @@
+{
+    "items": [
+        {
+            "ENTITY_ID": "BLOG_POST",
+            "FIELD_NAME": "UF_BLOG_POST_DOC",
+            "USER_TYPE_ID": "file",
+            "XML_ID": "UF_BLOG_POST_DOC",
+            "SORT": "100",
+            "MULTIPLE": "Y",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "Y",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "BLOG_COMMENT",
+            "FIELD_NAME": "UF_BLOG_COMMENT_DOC",
+            "USER_TYPE_ID": "file",
+            "XML_ID": "UF_BLOG_COMMENT_DOC",
+            "SORT": "100",
+            "MULTIPLE": "Y",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "Y",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "BLOG_POST",
+            "FIELD_NAME": "UF_BLOG_POST_URL_PRV",
+            "USER_TYPE_ID": "url_preview",
+            "XML_ID": "UF_BLOG_POST_URL_PRV",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "Y",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "BLOG_COMMENT",
+            "FIELD_NAME": "UF_BLOG_COMM_URL_PRV",
+            "USER_TYPE_ID": "url_preview",
+            "XML_ID": "UF_BLOG_COMM_URL_PRV",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "Y",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "BLOG_POST",
+            "FIELD_NAME": "UF_GRATITUDE",
+            "USER_TYPE_ID": "integer",
+            "XML_ID": "UF_GRATITUDE",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "FORUM_MESSAGE",
+            "FIELD_NAME": "UF_FORUM_MES_URL_PRV",
+            "USER_TYPE_ID": "url_preview",
+            "XML_ID": "UF_FORUM_MES_URL_PRV",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "FORUM_MESSAGE",
+            "FIELD_NAME": "UF_TASK_COMMENT_TYPE",
+            "USER_TYPE_ID": "integer",
+            "XML_ID": "UF_TASK_COMMENT_TYPE",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "IBLOCK_content:services_s1_SECTION",
+            "FIELD_NAME": "UF_BEFORE_AFTER",
+            "USER_TYPE_ID": "file",
+            "XML_ID": "UF_BEFORE_AFTER",
+            "SORT": "100",
+            "MULTIPLE": "Y",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "SIZE": 20,
+                "LIST_WIDTH": 200,
+                "LIST_HEIGHT": 200,
+                "MAX_SHOW_SIZE": 0,
+                "MAX_ALLOWED_SIZE": 0,
+                "EXTENSIONS": {
+                    "jpg": true,
+                    "png": true
+                },
+                "TARGET_BLANK": "Y"
+            }
+        },
+        {
+            "ENTITY_ID": "IBLOCK_content:services_s1_SECTION",
+            "FIELD_NAME": "UF_SECTION_CONTENT",
+            "USER_TYPE_ID": "iblock_element",
+            "XML_ID": "UF_SECTION_CONTENT",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "DISPLAY": "CHECKBOX",
+                "LIST_HEIGHT": 5,
+                "IBLOCK_ID": "content:reviews_s1",
+                "DEFAULT_VALUE": "",
+                "ACTIVE_FILTER": "N"
+            }
+        },
+        {
+            "ENTITY_ID": "IBLOCK_content:services_s1_SECTION",
+            "FIELD_NAME": "UF_LOCATION",
+            "USER_TYPE_ID": "string",
+            "XML_ID": "",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "SIZE": 40,
+                "ROWS": 1,
+                "REGEXP": "",
+                "MIN_LENGTH": 0,
+                "MAX_LENGTH": 0,
+                "DEFAULT_VALUE": ""
+            },
+            "EDIT_FORM_LABEL": {
+                "en": "",
+                "ru": "Местоположение"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "LIST_FILTER_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "ERROR_MESSAGE": {
+                "en": "",
+                "ru": ""
+            },
+            "HELP_MESSAGE": {
+                "en": "",
+                "ru": "https:\/\/yandex.ru\/map-constructor\/location-tool\/"
+            }
+        },
+        {
+            "ENTITY_ID": "IBLOCK_content:documents_SECTION",
+            "FIELD_NAME": "UF_SHOW_ON_MAIN",
+            "USER_TYPE_ID": "boolean",
+            "XML_ID": "",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "DEFAULT_VALUE": 0,
+                "DISPLAY": "RADIO",
+                "LABEL": [
+                    "",
+                    ""
+                ],
+                "LABEL_CHECKBOX": ""
+            },
+            "EDIT_FORM_LABEL": {
+                "en": "",
+                "ru": "Показывать на главной"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "LIST_FILTER_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "ERROR_MESSAGE": {
+                "en": "",
+                "ru": ""
+            },
+            "HELP_MESSAGE": {
+                "en": "",
+                "ru": ""
+            }
+        }
+    ]
+}
