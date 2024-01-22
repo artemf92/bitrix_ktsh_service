@@ -51,24 +51,36 @@ $this->setFrameMode(true);
 										<?= GetMessage("IBLOCK_FIELD_" . $code) ?>:&nbsp;<?= $value; ?>
 									</small><br />
 								<? endforeach; ?>
-								<br/>
+								<br />
 								<? foreach ($arItem["DISPLAY_PROPERTIES"] as $pid => $arProperty) : ?>
 							<div>
 								<?= $arProperty["NAME"] ?>:&nbsp;
 								<? if (is_array($arProperty["DISPLAY_VALUE"])) : ?>
 									<? foreach ($arProperty['FILE_VALUE'] as $i => $file) { ?>
 										<div class="mb-2">
-											<?= $file['ORIGINAL_NAME'] ?> - <a href="<?= $file['SRC'] ?>" class="<?//b-btn b-btn-primary?>" download="<?= $file['ORIGINAL_NAME'] ?>">Скачать</a>
+											<?= $file['ORIGINAL_NAME'] ?> - <a href="<?= $file['SRC'] ?>" class="<? //b-btn b-btn-primary
+																																														?>" download="<?= $file['ORIGINAL_NAME'] ?>">Скачать</a>
 										</div>
 									<? } ?>
 								<? else : ?>
 									<div class="mb-2">
-										<?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?> - <a href="<?= $arProperty["FILE_VALUE"]['SRC'] ?>" class="<?//b-btn b-btn-primary?>" download="<?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?>">Скачать</a>
+										<?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?> - <a href="<?= $arProperty["FILE_VALUE"]['SRC'] ?>" class="<? //b-btn b-btn-primary
+																																																																	?>" download="<?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?>">Скачать</a>
 									</div>
 								<? endif; ?>
 							</div>
 						<? endforeach; ?>
 						</p>
+						<? if (!empty($arItem['PROPERTIES']['GALLERY']['VALUE'])) { ?>
+							<div class="row mt-2 mb-2">
+								<? foreach ($arItem['PROPERTIES']['GALLERY']['VALUE'] as $item) { ?>
+									<div class="col-3 col-xl-2 mb-2 px-1">
+										<? $src = CFile::GetPath($item); ?>
+										<a data-fancybox="gallery" href="<?= $src ?>" href=""><img src="<?= $src ?>" alt=""></a>
+									</div>
+								<? } ?>
+							</div>
+						<? } ?>
 						<? if ($arParams["DISPLAY_DATE"] != "N" && $arItem["DATE_CREATE"]) : ?>
 							<div class="b-date mb-2 small text-muted">
 								<? echo str_replace('Дата создания:', '', $arItem["DATE_CREATE"]) ?>
