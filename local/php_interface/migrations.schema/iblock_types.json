@@ -1,0 +1,59 @@
+{
+    "items": [
+        {
+            "ID": "content",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": null,
+            "EDIT_FILE_AFTER": null,
+            "IN_RSS": "N",
+            "SORT": "50",
+            "LANG": {
+                "ru": {
+                    "NAME": "Контент",
+                    "SECTION_NAME": "",
+                    "ELEMENT_NAME": ""
+                },
+                "en": {
+                    "NAME": "Content",
+                    "SECTION_NAME": "",
+                    "ELEMENT_NAME": ""
+                }
+            }
+        },
+        {
+            "ID": "form_results",
+            "SECTIONS": "N",
+            "EDIT_FILE_BEFORE": null,
+            "EDIT_FILE_AFTER": null,
+            "IN_RSS": "N",
+            "SORT": "100",
+            "LANG": {
+                "ru": {
+                    "NAME": "Результаты форм",
+                    "SECTION_NAME": "",
+                    "ELEMENT_NAME": ""
+                },
+                "en": {
+                    "NAME": "Form results",
+                    "SECTION_NAME": "",
+                    "ELEMENT_NAME": ""
+                }
+            }
+        },
+        {
+            "ID": "rest_entity",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": null,
+            "EDIT_FILE_AFTER": null,
+            "IN_RSS": "N",
+            "SORT": "1000",
+            "LANG": {
+                "ru": {
+                    "NAME": "Хранилище данных для приложений",
+                    "SECTION_NAME": "Разделы",
+                    "ELEMENT_NAME": "Элементы"
+                }
+            }
+        }
+    ]
+}

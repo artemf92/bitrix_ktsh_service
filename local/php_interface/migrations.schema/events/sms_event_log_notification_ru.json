@@ -1,0 +1,22 @@
+{
+    "event": "SMS_EVENT_LOG_NOTIFICATION",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "sms",
+        "NAME": "Оповещение журнала событий",
+        "DESCRIPTION": [
+            "#PHONE_NUMBER# - Номер телефона получателя",
+            "#ADDITIONAL_TEXT# - Дополнительный текст действия",
+            "#NAME# - Название оповещения",
+            "#AUDIT_TYPE_ID# - Тип события",
+            "#ITEM_ID# - Объект",
+            "#USER_ID# - Пользователь",
+            "#REMOTE_ADDR# - IP-адрес",
+            "#USER_AGENT# - Браузер",
+            "#REQUEST_URI# - Страница",
+            "#EVENT_COUNT# - Количество записей"
+        ],
+        "SORT": "100"
+    },
+    "messages": []
+}

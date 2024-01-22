@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "fileman",
+            "NAME": "different_set",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "fileman",
+            "NAME": "stickers_use_hotkeys",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fileman",
+            "NAME": "use_editor_3",
+            "VALUE": "Y"
+        }
+    ]
+}

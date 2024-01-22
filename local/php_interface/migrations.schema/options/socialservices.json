@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "allow_encrypted_tokens",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "auth_services",
+            "VALUE": {
+                "VKontakte": "N",
+                "MyMailRu": "N",
+                "Twitter": "N",
+                "Facebook": "N",
+                "Livejournal": "Y",
+                "YandexOpenID": "Y",
+                "Rambler": "Y",
+                "MailRuOpenID": "Y",
+                "Liveinternet": "Y",
+                "Blogger": "Y",
+                "OpenID": "Y",
+                "LiveID": "N"
+            }
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_domain",
+            "VALUE": "https:\/\/new.ktsh39.ru"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_id",
+            "VALUE": "ext.6572bbccc31bb2.77406492"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_secret",
+            "VALUE": "Wo6XPfDfiF4572XaGHXFqly0Rsq2VJ4g10yfj7AdjqiPpeBuPr"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_api_key",
+            "VALUE": "AIzaSyA7puwZwGDJgOjcAWsFsY7hQcrioC13A18"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appid",
+            "VALUE": "798910771106.apps.googleusercontent.com"
+        }
+    ]
+}

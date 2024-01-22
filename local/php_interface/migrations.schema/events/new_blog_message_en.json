@@ -1,0 +1,66 @@
+{
+    "event": "NEW_BLOG_MESSAGE",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "New blog message",
+        "DESCRIPTION": [
+            "#BLOG_ID# - Blog ID",
+            "#BLOG_NAME# - Blog title",
+            "#BLOG_URL# - Blog url",
+            "#MESSAGE_TITLE# - Message title",
+            "#MESSAGE_TEXT# - Message text",
+            "#MESSAGE_DATE# - Message date",
+            "#MESSAGE_PATH# - URL to message",
+            "#AUTHOR# - Message author",
+            "#EMAIL_FROM# - Sender email",
+            "#EMAIL_TO# - Recipient email"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: [B] #BLOG_NAME# : #MESSAGE_TITLE#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#",
+                "------------------------------------------",
+                "",
+                "Новое сообщение в блоге \"#BLOG_NAME#\"",
+                "",
+                "Тема:",
+                "#MESSAGE_TITLE#",
+                "",
+                "Автор: #AUTHOR#",
+                "Дата: #MESSAGE_DATE#",
+                "",
+                "Текст сообщения:",
+                "#MESSAGE_TEXT#",
+                "",
+                "Адрес сообщения:",
+                "#MESSAGE_PATH#",
+                "",
+                "Сообщение сгенерировано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ NEW_BLOG_MESSAGE ] Новое сообщение в блоге"
+        }
+    ]
+}

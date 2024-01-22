@@ -1,0 +1,69 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "autoloadSize",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkAjaxMode",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkAutoload",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkConnectJquery",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkCoordsConsoleLog",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkPreloader",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkStandartPagination",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "checkTemplate",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "ownButtonName",
+            "VALUE": "Показать еще"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "ownPreloader",
+            "VALUE": "\/local\/templates\/ktsh\/images\/spinner.gif"
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "tplElement1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "tplElement2",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "fgsoft.autoloader",
+            "NAME": "tplElement5",
+            "VALUE": ""
+        }
+    ]
+}

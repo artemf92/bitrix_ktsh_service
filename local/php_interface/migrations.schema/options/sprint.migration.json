@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_agentschema",
+            "VALUE": "536b6f5317e857516c25c27ba769b5dc"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_groupschema",
+            "VALUE": "53474e61d92a5ca12540054727884f19"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_hlblockschema",
+            "VALUE": "40cd750bba9870f18aada2478b24840a"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_iblockschema",
+            "VALUE": "b13567cb377f77f672e0dc1c62af0117"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_usertypeentitiesschema",
+            "VALUE": "169740436bbf956b08c3feb758d6cae4"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "upgrade3_0cb1fbfb39557866ff1875c8228ecb05",
+            "VALUE": "1"
+        }
+    ]
+}

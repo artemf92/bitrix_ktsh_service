@@ -1,0 +1,63 @@
+{
+    "event": "EVENT_LOG_NOTIFICATION",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Event log notification",
+        "DESCRIPTION": [
+            "#EMAIL# - Recipient email",
+            "#ADDITIONAL_TEXT# - Action additional text",
+            "#NAME# - Notification name",
+            "#AUDIT_TYPE_ID# - Event type",
+            "#ITEM_ID# - Object",
+            "#USER_ID# - User",
+            "#REMOTE_ADDR# - IP address",
+            "#USER_AGENT# - Browser",
+            "#REQUEST_URI# - Page URL",
+            "#EVENT_COUNT# - Number of events"
+        ],
+        "SORT": "9"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "Оповещение журнала событий: #NAME#",
+            "MESSAGE": [
+                "Зафиксированы события в журнале, соответствующие параметрам оповещения:",
+                "",
+                "Тип события: #AUDIT_TYPE_ID#",
+                "Объект: #ITEM_ID#",
+                "Пользователь: #USER_ID# ",
+                "IP-адрес: #REMOTE_ADDR#",
+                "Браузер: #USER_AGENT#",
+                "Страница: #REQUEST_URI# ",
+                "",
+                "Количество записей: #EVENT_COUNT# ",
+                "",
+                "#ADDITIONAL_TEXT#",
+                "",
+                "Перейти в журнал событий:",
+                "http:\/\/#SERVER_NAME#\/bitrix\/admin\/event_log.php?set_filter=Y&find_audit_type_id=#AUDIT_TYPE_ID#"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": "ru",
+            "EVENT_TYPE": "[ EVENT_LOG_NOTIFICATION ] Оповещение журнала событий"
+        }
+    ]
+}
