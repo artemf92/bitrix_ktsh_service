@@ -118,7 +118,7 @@ foreach ($arResult['SECTIONS'] as $key => &$arSection) {
 								<div class="b-price"><?= $arSection['PROPERTIES']['PRICE']['~VALUE'] ?></div>
 							<?php endif; ?>
 						</div>
-						<ul class="list-group list-unstyled">
+						<ul class="list-group px-4 list-unstyled">
 							<? foreach ($arObjects[$arSection['ID']]['ITEMS'] as $key => $object) { ?>
 								<li class="mb-4">
 										<p class="mb-1"><strong><?= $object['NAME'] ?></strong></p>

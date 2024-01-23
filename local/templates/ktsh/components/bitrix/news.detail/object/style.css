@@ -56,7 +56,6 @@ div.news-detail img.detail_picture {
 }
 
 .section-tabs {
-  margin-bottom: 53px;
   text-align: left;
 }
 .contact-container {
@@ -65,9 +64,8 @@ div.news-detail img.detail_picture {
 .contact-block .contact-holder {
   border: 1px solid #eaeaea;
   float: left;
-  width: 300px;
-  height: 217px;
-  padding: 30px 15px 0 30px;
+  max-width: 300px;
+  padding: 30px;
   margin: 0 30px 30px 0;
 }
 .contact-holder .phone {
@@ -127,4 +125,20 @@ div.news-detail img.detail_picture {
 }
 .object-providers table tr td:last-child, object_table tr th:last-child {
 	border-right: none;
+}
+.tablesaw {
+  overflow: hidden;
+}
+@media (max-width:768px) {
+  .objects__content-tab {
+    margin-bottom: .5rem;
+  }
+  .tablesaw-stack td .tablesaw-cell-label, .tablesaw-stack th .tablesaw-cell-label {
+    width: 48% !important;
+  }
+  .tablesaw-cell-content {
+    width: 48% !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

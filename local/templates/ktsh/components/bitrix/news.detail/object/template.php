@@ -11,6 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/css/tablesaw.css');
+$this->addExternalJs(SITE_TEMPLATE_PATH . '/js/tablesaw.jquery.js');
+$this->addExternalJs(SITE_TEMPLATE_PATH . '/js/tablesaw-init.js');
 ?>
 <div class="objects__detail">
 	<div class="objects__content-tab" id="tab1">
@@ -23,7 +26,7 @@ $this->setFrameMode(true);
 		<? } ?>
 		<? if ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE']) { ?>
 			<p>По вопросам эксплуатации и обслуживания здания и оборудования Вашего МКД — контактное лицо управляющей компании КТСХ - Сервис</p>
-			<div id="contact" class="contact-block section-tabs section-menu mt-4">
+			<div id="contact" class="contact-block section-tabs section-menu mt-2">
 				<div class="contact-container">
 					<? foreach ($arResult['PROPERTIES']['HOUSEMANAGER']['VALUE'] as $key => $item) { ?>
 						<div class="contact-holder">
@@ -87,3 +90,19 @@ $this->setFrameMode(true);
 	}
 	?>
 </div>
+
+<script>
+	$(document).ready(function() {
+		if ($(window).width() < 992) {
+			$('.objects__detail table').each((i, el) => {
+				const thead = $(el).find('tr:first')
+				$(el).find('tbody').before('<thead>Test</thead>')
+				$(el).find('thead').append(thead)
+				
+				$(el).addClass('tablesaw tablesaw-stack')
+				$(el).attr('data-tablesaw-mode', 'stack')
+			})
+			Tablesaw.init();
+		}
+	})
+</script>
