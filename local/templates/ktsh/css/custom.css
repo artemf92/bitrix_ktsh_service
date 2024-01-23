@@ -702,20 +702,16 @@ a.b-btn {
     display: none;
   }
   .b-main-menu {
-    background-color: #151515 !important;
+    background-color: #fff !important;
   }
-  .b-main-menu li a,
-  .header .b-header-phone a {
-    color: #FFFF33 !important;
+  .b-main-menu li a {
+    color: #000 !important;
   }
   .b-services-list .b-item .b-title {
     margin-bottom: 0 !important;
   }
   .b-services-list .b-item .b-title span {
     text-transform: none !important;
-  }
-  .intro__content .btn {
-    color: #FFFF33 !important;
   }
 }
 @media (max-width: 768px) {
