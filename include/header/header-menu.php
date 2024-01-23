@@ -65,8 +65,7 @@ foreach ($customLinks as $k => $link) {
     </ul>
     <div class="d-lg-none menu-mobile-wrap">
         <hr>
-        <? /* ?>
-        <a href="#" style="color: yellow" class="btn b-btn b-btn-primary btn-lk-mobile">
+        <a href="#" class="btn b-btn b-btn-primary btn-lk-mobile">
             <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -75,8 +74,7 @@ foreach ($customLinks as $k => $link) {
             </div>
             Личный кабинет
         </a>
-        <? */ ?>
-        <button data-toggle="modal" style="color: yellow" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary">Напишите нам</button>
+        <button data-toggle="modal" data-target="#b-zapis-form" class="btn btn-ajax b-btn b-btn-primary">Напишите нам</button>
         <button class="mobile-search">
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#0898d4" class="bi bi-search" viewBox="0 0 16 16">

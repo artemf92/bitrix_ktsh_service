@@ -591,7 +591,8 @@ a.b-btn {
 	color: #000;
 }
 #block-about .b-text {
-  overflow: scroll;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 #block-about table {
   width: 100%;
@@ -608,6 +609,23 @@ a.b-btn {
   right: 10px;
   top: 5px;
   font-size: 3rem;
+}
+#block-about a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.b-faq-elements .b-faq-element .b-answer a[href^="tel"] {
+  white-space: pre;
+}
+.b-faq-elements .b-faq-element .b-answer p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.b-faq-elements .b-faq-element .b-answer a:not(.b-btn) {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 @media (max-width: 1300px) {
   .header .b-up .b-right {
@@ -702,20 +720,16 @@ a.b-btn {
     display: none;
   }
   .b-main-menu {
-    background-color: #151515 !important;
+    background-color: #fff !important;
   }
-  .b-main-menu li a,
-  .header .b-header-phone a {
-    color: #FFFF33 !important;
+  .b-main-menu li a {
+    color: #000 !important;
   }
-  .b-services-list .b-item .b-title {
+  .b-catalog-list-block .b-item .b-title {
     margin-bottom: 0 !important;
   }
-  .b-services-list .b-item .b-title span {
+  .b-catalog-list-block .b-item .b-title span {
     text-transform: none !important;
-  }
-  .intro__content .btn {
-    color: #FFFF33 !important;
   }
 }
 @media (max-width: 768px) {
@@ -773,7 +787,7 @@ a.b-btn {
     max-width: 90%;
     margin: auto;
   }
-  .b-services-list .b-item .b-title span {
+  .b-catalog-list-block .b-item .b-title span {
     display: block;
     text-align: center;
   }
@@ -781,12 +795,16 @@ a.b-btn {
     flex-shrink: 0;
     margin-right: 10px;
   }
-  .b-services-list .b-item .b-title span {
+  .b-catalog-list-block .b-item .b-title span {
     font-weight: 400 !important;
   }
   .b-btn-catalog {
     height: 36px !important;
     padding: 4px 25px !important;
+  }
+  #block-news .b-title span,
+  #b-news-list .b-title span {
+    text-align: left;
   }
 }
 @media (max-width: 575px) {
@@ -819,7 +837,7 @@ a.b-btn {
   .b-services-list .b-item .b-item-content {
     padding: 0 10px !important;
   }
-  .b-services-list .b-item .b-title span {
+  .b-catalog-list-block .b-item .b-title span {
     font-size: 12px !important;
   }
   .menu-mobile-wrap .b-btn {

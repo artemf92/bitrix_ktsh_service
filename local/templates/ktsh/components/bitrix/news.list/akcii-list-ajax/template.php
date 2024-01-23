@@ -94,7 +94,7 @@ switch ($countMOB) {
                     <div class="b-item-content-wrap">
                         <div class="b-item-content">
                             <?php if ($arItem['PROPERTIES']['BUTTON_DETAIL_TEXT']['VALUE_XML_ID'] == 'Y') { ?>
-                                <div class="b-title d-block mb-2">
+                                <div class="b-title font-weight-bold d-block mb-2">
                                 <? } else { ?>
                                     <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="b-title d-block mb-2">
                                     <? } ?>

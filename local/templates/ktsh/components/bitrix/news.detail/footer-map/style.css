@@ -11,3 +11,18 @@ div.news-detail img.detail_picture
 {
 	color:#486DAA;
 }
+@media (max-width:1400px) {
+	.map-content {
+		left: 10% !important;
+	}
+}
+@media (max-width:991px) {
+	.map-content {
+		left: 5% !important;
+	}
+}
+@media (max-width:768px) {
+	.map-script {
+		height: 350px !important;
+	}
+}
