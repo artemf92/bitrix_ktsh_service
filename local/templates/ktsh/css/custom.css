@@ -591,7 +591,8 @@ a.b-btn {
 	color: #000;
 }
 #block-about .b-text {
-  overflow: scroll;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 #block-about table {
   width: 100%;
@@ -613,6 +614,18 @@ a.b-btn {
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.b-faq-elements .b-faq-element .b-answer a[href^="tel"] {
+  white-space: pre;
+}
+.b-faq-elements .b-faq-element .b-answer p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.b-faq-elements .b-faq-element .b-answer a:not(.b-btn) {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 @media (max-width: 1300px) {
   .header .b-up .b-right {
