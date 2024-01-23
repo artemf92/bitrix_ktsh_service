@@ -79,7 +79,7 @@ switch ($countMOB) {
                 $itemClass = 'b-odd';
             }
             ?>
-            <div class="<?= $classMob ?> <?= $classPC ?> col-md-4 b-item <?= $itemClass ?>">
+            <div class="<?= $classMob ?> <?= $classPC ?> col-md-6 b-item <?= $itemClass ?>">
                 <div class="b-item-inner" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <div class="b-img">
                         <? if ($image) { ?>

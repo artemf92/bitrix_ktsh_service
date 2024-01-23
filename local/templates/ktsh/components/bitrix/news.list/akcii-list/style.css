@@ -4,6 +4,7 @@ ul.years_filter {
     margin: 0 0 30px;
     display: flex;
     flex-wrap: wrap;
+    row-gap: 1rem;
 }
 ul.years_filter li {
     margin-right: 20px;
