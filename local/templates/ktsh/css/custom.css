@@ -609,6 +609,11 @@ a.b-btn {
   top: 5px;
   font-size: 3rem;
 }
+#block-about a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 @media (max-width: 1300px) {
   .header .b-up .b-right {
     flex: 0 1 42% !important;
