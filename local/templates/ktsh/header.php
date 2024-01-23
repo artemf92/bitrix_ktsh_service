@@ -169,17 +169,14 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 <div id="resultsContainer"></div>
                             </form>
                         </div>
-                        <? /* ?>
                         <div class="b-header-socials">
                             <a href="#" target="_blank" rel="nofollow">
                                 <i class="fab fa-telegram"></i>
                             </a>
                         </div>
-                        <? */ ?>
                         <div class="b-header-order">
                             <button data-toggle="modal" data-target="#b-zapis-form" data-form-title="Электронное обращение" class="btn btn-ajax b-btn b-btn-primary">Напишите нам</button>
                         </div>
-                        <? /* ?>
                         <div class="b-header-cabinet">
                             <a href="#" class="link-cabinet">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#0898d4" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -188,7 +185,6 @@ if ($APPLICATION->GetProperty("without_h1") == "Y") {
                                 </svg>
                             </a>
                         </div>
-                        <? */ ?>
                         <? /* ?>
                         <div class="b-header-socials <?= $mobileSocialsClass ?>">
                             <? $APPLICATION->IncludeFile(
