@@ -131,15 +131,36 @@ if (0 == count($arResult['ITEMS'])) {
                                         <?= $arItem['DETAIL_TEXT'] ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if (!empty($gallery)) : ?>
-                                    <div class="b-modal-gallery">
-                                        <?php foreach ($gallery as $gal) : ?>
-                                            <a href="<?= $gal['IMG_BIG'] ?>" data-fancybox="polezno-modal">
-                                                <img class="img-responsive" data-src="<?= $gal['IMG_SMALL'] ?>" />
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
+                                <p>
+                                    <? foreach ($arItem["DISPLAY_PROPERTIES"] as $pid => $arProperty) : ?>
+                                        <? if ($pid == 'GALLERY') continue; ?>
+                                        <div>
+                                            <?= $arProperty["NAME"] ?>:&nbsp;
+                                            <? if (is_array($arProperty["DISPLAY_VALUE"])) : ?>
+                                                <? foreach ($arProperty['FILE_VALUE'] as $i => $file) { ?>
+                                                    <div class="mb-2">
+                                                        <?= $file['ORIGINAL_NAME'] ?> - <a href="<?= $file['SRC'] ?>" class="<? //b-btn b-btn-primary
+                                                                                                                                ?>" download="<?= $file['ORIGINAL_NAME'] ?>">Скачать</a>
+                                                    </div>
+                                                <? } ?>
+                                            <? else : ?>
+                                                <div class="mb-2">
+                                                    <?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?> - <a href="<?= $arProperty["FILE_VALUE"]['SRC'] ?>" class="<? //b-btn b-btn-primary
+                                                                                                                                                                    ?>" download="<?= $arProperty["FILE_VALUE"]['ORIGINAL_NAME'] ?>">Скачать</a>
+                                                </div>
+                                            <? endif; ?>
+                                        </div>
+                                    <? endforeach; ?>
+                            </p>
+                            <?php if (!empty($gallery)) : ?>
+                                <div class="b-modal-gallery">
+                                    <?php foreach ($gallery as $gal) : ?>
+                                        <a href="<?= $gal['IMG_BIG'] ?>" data-fancybox="polezno-modal">
+                                            <img class="img-responsive" data-src="<?= $gal['IMG_SMALL'] ?>" />
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                             </div>
                         </div>
                     </div>

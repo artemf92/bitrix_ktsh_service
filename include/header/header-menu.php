@@ -65,7 +65,7 @@ foreach ($customLinks as $k => $link) {
     </ul>
     <div class="d-lg-none menu-mobile-wrap">
         <hr>
-        <a href="#" class="btn b-btn b-btn-primary btn-lk-mobile">
+        <a href="#" class="btn b-btn b-btn-primary btn-lk-mobile" data-fancybox data-type="inline" data-src="<p class='py-5'>Раздел находится в разработке. Приносим свои извинения.</p>">
             <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
