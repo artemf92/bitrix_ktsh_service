@@ -48,6 +48,9 @@ $(document).ready(function() {
   })
 
   initObjectsPictures()
+
+  $.fancybox.defaults.closeTpl =
+    '<button data-fancybox-close type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>'
 })
 $(document).on('click', function (e) {
   if (
