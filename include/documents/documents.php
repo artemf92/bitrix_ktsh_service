@@ -11,7 +11,7 @@
         if ($ar_result['ID']) {
             $arElSelect = array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_TEXT", "PREVIEW_PICTURE", "PROPERTY_FILE");
             $arElFilter = array("IBLOCK_ID" => "21", "ACTIVE" => "Y", 'SECTION_ID' => $ar_result['ID']);
-            $res = CIBlockElement::GetList(array("ID" => "DESC"), $arElFilter, false, ['nTopCount' => 5], $arElSelect);
+            $res = CIBlockElement::GetList(array("ID" => "DESC"), $arElFilter, false, ['nTopCount' => 10], $arElSelect);
             $j = 0;
             while ($ob = $res->GetNextElement()) {
                 $arElFields = $ob->GetFields();
