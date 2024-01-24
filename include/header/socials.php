@@ -1,7 +1,6 @@
-
 <ul>
     <li>
-        <a href="#" target="_blank" rel="nofollow">
+        <a href="#" target="_blank" rel="nofollow" data-fancybox data-type="inline" data-src="<p class='py-5 rounded-lg'>Раздел находится в разработке. Приносим свои извинения.</p>">
             <i class="fab fa-telegram"></i>
         </a>
     </li>
