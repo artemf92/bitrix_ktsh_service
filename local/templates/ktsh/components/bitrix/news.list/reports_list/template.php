@@ -33,11 +33,14 @@ $this->setFrameMode(true);
 								<? endif ?>
 							</div>
 							<? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]) : ?>
-								<? if (!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])) : ?>
-									<div class="b-title"><?= $arItem['NAME'] ?></div>
-								<? else : ?>
-									<div class="b-title"><?= $arItem['NAME'] ?></div>
-								<? endif; ?>
+								<? if ($arParams["DISPLAY_DATE"] != "N" && $arItem["DATE_CREATE"]) : ?>
+									<div class="b-title font-weight-bold">
+										<? 
+										$title = str_replace('Дата создания:', '', $arItem["DATE_CREATE"]);
+										$title = explode(' ', $title);
+										echo $title[0] ?>
+									</div>
+								<? endif ?>
 							<? endif; ?>
 							<? if ($arParams["DISPLAY_PREVIEW_TEXT"] != "N" && $arItem["PREVIEW_TEXT"]) : ?>
 								<div class="b-text text-body">
@@ -81,11 +84,6 @@ $this->setFrameMode(true);
 								<? } ?>
 							</div>
 						<? } ?>
-						<? if ($arParams["DISPLAY_DATE"] != "N" && $arItem["DATE_CREATE"]) : ?>
-							<div class="b-date mb-2 small text-muted">
-								<? echo str_replace('Дата создания:', '', $arItem["DATE_CREATE"]) ?>
-							</div>
-						<? endif ?>
 						<hr>
 					<?php endforeach; ?>
 						</div>
