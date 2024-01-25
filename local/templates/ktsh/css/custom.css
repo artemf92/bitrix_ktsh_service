@@ -274,6 +274,7 @@
 }
 .b-header-address > span {
   max-width: 210px;
+  font-size: 14px;
 }
 .b-slogan {
   justify-content: center;
