@@ -40,7 +40,7 @@ $this->setFrameMode(true);
 								<? endif; ?>
 							<? endif; ?>
 							<? if ($arParams["DISPLAY_PREVIEW_TEXT"] != "N" && $arItem["PREVIEW_TEXT"]) : ?>
-								<div class="text-body">
+								<div class="b-text text-body">
 									<? echo $arItem["PREVIEW_TEXT"]; ?>
 								</div>
 							<? endif; ?>

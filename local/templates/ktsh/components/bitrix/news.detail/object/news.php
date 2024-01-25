@@ -18,7 +18,7 @@
     "DETAIL_URL" => "",
     "DISPLAY_BOTTOM_PAGER" => "Y",
     "DISPLAY_DATE" => "Y",
-    "DISPLAY_NAME" => "N",
+    "DISPLAY_NAME" => "Y",
     "DISPLAY_PICTURE" => "Y",
     "DISPLAY_PREVIEW_TEXT" => "Y",
     "DISPLAY_TOP_PAGER" => "N",
