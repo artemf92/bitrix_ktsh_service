@@ -628,6 +628,10 @@ a.b-btn {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.b-catalog-subcategory .btn[data-toggle="tab"] {
+  padding: 0;
+  height: auto;
+}
 @media (max-width: 1300px) {
   .header .b-up .b-right {
     flex: 0 1 42% !important;
