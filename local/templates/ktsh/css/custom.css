@@ -404,6 +404,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .b-catalog-subcategory li {
   text-decoration: underline;
@@ -629,8 +630,8 @@ a.b-btn {
   text-underline-offset: 3px;
 }
 .b-catalog-subcategory .btn[data-toggle="tab"] {
-  padding: 0;
-  height: auto;
+  padding: 0 !important;
+  height: auto !important;
 }
 @media (max-width: 1300px) {
   .header .b-up .b-right {
@@ -810,6 +811,10 @@ a.b-btn {
   #block-news .b-title span,
   #b-news-list .b-title span {
     text-align: left;
+  }
+  .b-catalog-subcategory {
+    column-gap: 20px;
+    row-gap: 10px;
   }
 }
 @media (max-width: 575px) {
