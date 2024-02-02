@@ -115,14 +115,14 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
                                     <div class="<?= $classMob ?> <?= $classPC ?> col-md-4 b-item <?= $itemClass ?>">
                                         <div class="b-item-inner">
                                             <div class="b-img">
-                                                <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax">
+                                                <span <?/*data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax"*/?>>
                                                     <img class="img-fluid" data-src="<?= $image['src'] ?>" alt="<?= $product['NAME'] ?>">
                                                 </span>
                                             </div>
                                             <div class="b-item-content-wrap">
                                                 <div class="b-item-content">
                                                     <div class="b-title">
-                                                        <span data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax"><?= $product['NAME'] ?></span>
+                                                        <span <?/*data-toggle="modal" data-target="#b-catalog-detail-modal" data-product-id="<?= $product['ID'] ?>" class="btn-ajax"*/?>><?= $product['NAME'] ?></span>
                                                     </div>
                                                     <div class="b-text">
                                                         <?php if ($product['PREVIEW_TEXT']) : ?>
