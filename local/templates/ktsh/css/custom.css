@@ -633,6 +633,12 @@ a.b-btn {
   padding: 0 !important;
   height: auto !important;
 }
+.b-modal .close {
+  z-index: 10 !important;
+}
+.fancybox-slide>* {
+  display: inline-block !important;
+}
 @media (max-width: 1300px) {
   .header .b-up .b-right {
     flex: 0 1 42% !important;
