@@ -880,6 +880,11 @@ a.b-btn {
     max-width: 170px;
     margin: auto;
   }
+  .fancybox-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .site-slider .b-slider-img {
