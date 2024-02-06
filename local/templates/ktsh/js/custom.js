@@ -119,7 +119,6 @@ function catalogFormHandler(event) {
   const product = window.bCatalogselectedProduct
   let form = event.detail.object
   if (form.identification.id == 64) {
-    form.setProperty('product', product)
     setTimeout(() => {
       const inputs = modal.querySelectorAll('input[type="string"]')
       for (let i of inputs) {

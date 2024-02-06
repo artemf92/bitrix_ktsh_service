@@ -44,6 +44,17 @@ if (!Loader::includeModule('gedestudio.axiland')) {
         array(),
         array("MODE" => "php")
     ); ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            window.bCatalogselectedProduct = ''
+        })
+        window.addEventListener('b24:form:init', (event) => {
+            let form = event.detail.object;
+            if (form.identification.id == 64) {
+                form.setProperty("my_param1", window.bCatalogselectedProduct);
+            }
+        });
+    </script>
 </head>
 <?
 $curPage = $APPLICATION->GetCurPage(true);
