@@ -874,6 +874,9 @@ a.b-btn {
   #block-about h2 {
     font-size: 1.4rem;
   }
+  .b24-form-padding-side {
+    padding: 0 !important;
+  }
 }
 @media (max-width: 375px) {
   .header .b-logo {

@@ -125,6 +125,13 @@ function catalogFormHandler(event) {
         if (i.value == '%my_param1% ') {
           i.value = product
           i.disabled = true
+          i.type = 'hidden'
+          const textarea = BX.create('TEXTAREA', { 
+            props: { className: i.className, rows: window.innerWidth < 480 ? 3:1, disabled: true}, 
+            style: { height: 'auto', marginTop: '20px' }, 
+            html: product
+          })
+          i.parentElement.appendChild(textarea)
         }
       }
     }, 100)
