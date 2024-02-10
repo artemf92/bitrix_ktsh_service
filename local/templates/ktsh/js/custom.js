@@ -125,7 +125,11 @@ function catalogFormHandler(event) {
         if (i.value == '%my_param1% ') {
           i.value = product
           i.disabled = true
+<<<<<<< HEAD
           i.type = 'hidden'          
+=======
+          i.type = 'hidden'
+>>>>>>> parent of e1aebc39 (fix)
           const textarea = BX.create('TEXTAREA', { 
             props: { className: i.className, rows: window.innerWidth < 480 ? 3:1, disabled: true}, 
             style: { height: 'auto', marginTop: '20px' }, 
