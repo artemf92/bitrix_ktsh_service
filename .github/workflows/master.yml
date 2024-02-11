@@ -16,14 +16,14 @@ jobs:
         run: |
           set -eu
           mkdir "$HOME/.ssh"
-          echo "${{ secrets.SSH_KEY }}" > "$HOME/.ssh/id_rsa"
-          chmod 600 "$HOME/.ssh/id_rsa"
-          ssh-keyscan -t rsa ${{ secrets.FTP_SERVER }} >> $HOME/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > "$HOME/.ssh/action"
+          chmod 600 "$HOME/.ssh/action"
+        # ssh-keyscan -t rsa ${{ secrets.FTP_SERVER }} >> $HOME/.ssh/known_hosts
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
       - name: Deploy to Hosting
         run: |
-          rsync -e "ssh -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" --archive --compress . ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:~/www/new.ktsh39.ru/
+          rsync -e "ssh -i $HOME/.ssh/action -o StrictHostKeyChecking=no" --archive --compress . ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:~/www/new.ktsh39.ru/
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
